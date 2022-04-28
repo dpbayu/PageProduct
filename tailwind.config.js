@@ -7,7 +7,7 @@ module.exports = {
         secondary: '#fe806b',
         third: '#e6e6e6',
         forth: '#2e2b26',
-      }
+      },
     },
   },
   plugins: [],
