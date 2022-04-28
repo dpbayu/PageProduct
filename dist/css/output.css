@@ -604,6 +604,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1.75rem;
 }
 
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .w-full {
   width: 100%;
 }
@@ -813,6 +819,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .fill-current {
   fill: currentColor;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .py-5 {
