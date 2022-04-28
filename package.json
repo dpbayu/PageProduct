@@ -1,0 +1,23 @@
+{
+  "name": "productpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpbayu/ProductPage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dpbayu/ProductPage/issues"
+  },
+  "homepage": "https://github.com/dpbayu/ProductPage#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
