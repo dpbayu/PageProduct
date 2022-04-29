@@ -510,15 +510,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
-.top-\[2px\] {
-  top: 2px;
+.top-\[3px\] {
+  top: 3px;
 }
 
-.right-0 {
-  right: 0px;
+.right-1 {
+  right: 0.25rem;
 }
 
-<<<<<<< Updated upstream
 .top-0 {
   top: 0px;
 }
@@ -527,90 +526,46 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 0px;
 }
 
-.top-5 {
-  top: 1.25rem;
-}
-
-.left-96 {
-  left: 24rem;
-}
-
-.left-80 {
-  left: 20rem;
-}
-
-.left-56 {
-  left: 14rem;
-}
-
-.left-36 {
-  left: 9rem;
+.top-7 {
+  top: 1.75rem;
 }
 
 .left-32 {
   left: 8rem;
 }
 
-.top-\[5px\] {
-  top: 5px;
-}
-
-.top-\[3px\] {
-  top: 3px;
-}
-
-.top-\[px\] {
-  top: px;
-}
-
-.right-1 {
-  right: 0.25rem;
-}
-
-.top-7 {
-  top: 1.75rem;
+.right-0 {
+  right: 0px;
 }
 
 .z-10 {
   z-index: 10;
 }
 
-=======
->>>>>>> Stashed changes
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
 
 .col-span-2 {
   grid-column: span 2 / span 2;
-<<<<<<< Updated upstream
 }
 
 .col-span-12 {
   grid-column: span 12 / span 12;
-=======
->>>>>>> Stashed changes
-}
-
-.col-span-full {
-  grid-column: 1 / -1;
-}
-
-<<<<<<< Updated upstream
-.col-span-7 {
-  grid-column: span 7 / span 7;
 }
 
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
 
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
 .col-start-5 {
   grid-column-start: 5;
 }
 
-=======
->>>>>>> Stashed changes
 .col-start-6 {
   grid-column-start: 6;
 }
@@ -619,7 +574,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-column-start: 8;
 }
 
-<<<<<<< Updated upstream
+.col-start-9 {
+  grid-column-start: 9;
+}
+
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -628,24 +586,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-column-start: 3;
 }
 
-.col-start-10 {
-  grid-column-start: 10;
-}
-
-.col-start-9 {
-  grid-column-start: 9;
-}
-
-.col-start-7 {
-  grid-column-start: 7;
-}
-
 .row-start-2 {
   grid-row-start: 2;
 }
 
-=======
->>>>>>> Stashed changes
 .m-auto {
   margin: auto;
 }
@@ -660,10 +604,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 5rem;
 }
 
-.mx-1 {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-<<<<<<< Updated upstream
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .my-5 {
@@ -671,26 +614,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.25rem;
 }
 
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-}
-
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
-
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-=======
->>>>>>> Stashed changes
 }
 
 .mb-5 {
@@ -705,10 +636,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-
 .-mt-5 {
   margin-top: -1.25rem;
 }
@@ -721,24 +648,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.25rem;
 }
 
-.mt-\[70px\] {
-  margin-top: 70px;
-}
-
 .ml-2 {
   margin-left: 0.5rem;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
 .mt-3 {
   margin-top: 0.75rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 
 .block {
@@ -769,7 +684,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1.75rem;
 }
 
-<<<<<<< Updated upstream
 .h-fit {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -780,8 +694,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
-.h-\[402px\] {
-  height: 402px;
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-\[86px\] {
+  height: 86px;
 }
 
 .h-6 {
@@ -792,73 +714,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2rem;
 }
 
-.h-\[86px\] {
-  height: 86px;
+.h-1 {
+  height: 0.25rem;
 }
 
 .h-\[200px\] {
   height: 200px;
 }
 
-.h-36 {
-  height: 9rem;
-=======
-.h-\[500px\] {
-  height: 500px;
->>>>>>> Stashed changes
-}
-
-.h-\[200pxn\] {
-  height: 200pxn;
-}
-
-<<<<<<< Updated upstream
-.h-10 {
-  height: 2.5rem;
-}
-
-.h-3 {
-  height: 0.75rem;
-}
-
 .h-2 {
   height: 0.5rem;
-}
-
-.h-1 {
-  height: 0.25rem;
 }
 
 .h-20 {
   height: 5rem;
 }
 
-.h-56 {
-  height: 14rem;
-}
-
-.h-96 {
-  height: 24rem;
-}
-
-.h-\[300px\] {
-  height: 300px;
-}
-
-.h-\[600\] {
-  height: 600;
-}
-
-.h-\[500\] {
-  height: 500;
-}
-
-.h-\[500px\] {
-  height: 500px;
-}
-
-=======
->>>>>>> Stashed changes
 .w-full {
   width: 100%;
 }
@@ -883,131 +754,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 50%;
 }
 
-<<<<<<< Updated upstream
-.w-\[402px\] {
-  width: 402px;
-}
-
-.w-\[180px\] {
-  width: 180px;
+.w-10 {
+  width: 2.5rem;
 }
 
 .w-\[86px\] {
   width: 86px;
 }
 
+.w-\[180px\] {
+  width: 180px;
+}
+
 .w-36 {
   width: 9rem;
-}
-
-.w-52 {
-  width: 13rem;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
-}
-
-.w-\[200px\] {
-  width: 200px;
-}
-
-.w-\[100px\] {
-  width: 100px;
-}
-
-.w-\[125px\] {
-  width: 125px;
-}
-
-.w-\[140px\] {
-  width: 140px;
-}
-
-.w-\[150px\] {
-  width: 150px;
-}
-
-.w-\[155px\] {
-  width: 155px;
-}
-
-.w-\[135px\] {
-  width: 135px;
-}
-
-.w-\[10px\] {
-  width: 10px;
-}
-
-.w-\[25px\] {
-  width: 25px;
-}
-
-.w-56 {
-  width: 14rem;
-}
-
-.w-1\/3 {
-  width: 33.333333%;
-}
-
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.w-80 {
-  width: 20rem;
-}
-
-.w-20 {
-  width: 5rem;
-}
-
-.w-40 {
-  width: 10rem;
-}
-
-.w-10 {
-  width: 2.5rem;
-}
-
-.w-64 {
-  width: 16rem;
-}
-
-.w-72 {
-  width: 18rem;
 }
 
 .w-\[275px\] {
   width: 275px;
 }
 
-.w-\[50px\] {
-  width: 50px;
-}
-
-.w-\[130px\] {
-  width: 130px;
-}
-
-.w-\[160px\] {
-  width: 160px;
-}
-
-.w-\[175px\] {
-  width: 175px;
-}
-
 .w-\[173px\] {
   width: 173px;
-}
-
-.w-44 {
-  width: 11rem;
 }
 
 .w-48 {
@@ -1018,8 +786,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2rem;
 }
 
-.grow {
-  flex-grow: 1;
+.w-40 {
+  width: 10rem;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
+}
+
+.w-\[155px\] {
+  width: 155px;
+}
+
+.w-\[125px\] {
+  width: 125px;
+}
+
+.w-\[25px\] {
+  width: 25px;
+}
+
+.w-20 {
+  width: 5rem;
 }
 
 .transform {
@@ -1030,8 +818,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   cursor: pointer;
 }
 
-=======
->>>>>>> Stashed changes
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
@@ -1044,13 +830,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-wrap: wrap;
 }
 
-<<<<<<< Updated upstream
 .items-center {
   align-items: center;
 }
 
-=======
->>>>>>> Stashed changes
 .justify-center {
   justify-content: center;
 }
@@ -1071,47 +854,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 2.5rem;
 }
 
-<<<<<<< Updated upstream
 .gap-1 {
   gap: 0.25rem;
-}
-
-.gap-20 {
-  gap: 5rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.gap-6 {
-  gap: 1.5rem;
-}
-
-.gap-56 {
-  gap: 14rem;
 }
 
 .gap-48 {
   gap: 12rem;
 }
 
-=======
->>>>>>> Stashed changes
 .self-center {
   align-self: center;
 }
 
-.rounded-sm {
-  border-radius: 0.125rem;
+.rounded-md {
+  border-radius: 0.375rem;
 }
 
 .rounded-full {
   border-radius: 9999px;
-}
-
-.rounded-md {
-  border-radius: 0.375rem;
 }
 
 .rounded {
@@ -1122,17 +882,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 1px;
 }
 
-<<<<<<< Updated upstream
 .border-2 {
   border-width: 2px;
 }
 
-.border-4 {
-  border-width: 4px;
-}
-
-=======
->>>>>>> Stashed changes
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1150,11 +903,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-first {
   --tw-border-opacity: 1;
   border-color: rgb(255 108 12 / var(--tw-border-opacity));
-}
-
-.border-third {
-  --tw-border-opacity: 1;
-  border-color: rgb(230 230 230 / var(--tw-border-opacity));
 }
 
 .border-slate-300 {
@@ -1179,16 +927,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-top-color: rgb(255 108 12 / var(--tw-border-opacity));
 }
 
-.border-t-third {
-  --tw-border-opacity: 1;
-  border-top-color: rgb(230 230 230 / var(--tw-border-opacity));
-}
-
-.border-b-first {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(255 108 12 / var(--tw-border-opacity));
-}
-
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(254 128 107 / var(--tw-bg-opacity));
@@ -1199,7 +937,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 108 12 / var(--tw-bg-opacity));
 }
 
-<<<<<<< Updated upstream
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1260,18 +997,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-=======
->>>>>>> Stashed changes
 .fill-current {
   fill: currentColor;
 }
 
 .p-1 {
   padding: 0.25rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
 }
 
 .py-3 {
@@ -1304,32 +1035,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.25rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .pt-1 {
   padding-top: 0.25rem;
 }
 
-<<<<<<< Updated upstream
 .pb-5 {
   padding-bottom: 1.25rem;
 }
 
-=======
->>>>>>> Stashed changes
 .text-center {
   text-align: center;
 }
@@ -1344,7 +1062,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25rem;
 }
 
-<<<<<<< Updated upstream
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -1359,31 +1076,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 10px;
 }
 
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
-}
-
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
-}
-
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
-
-=======
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> Stashed changes
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .font-medium {
@@ -1408,6 +1103,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(254 128 107 / var(--tw-text-opacity));
 }
 
+.text-slate-400 {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+.text-slate-600 {
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105 / var(--tw-text-opacity));
+}
+
 .text-third {
   --tw-text-opacity: 1;
   color: rgb(230 230 230 / var(--tw-text-opacity));
@@ -1416,12 +1121,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-first {
   --tw-text-opacity: 1;
   color: rgb(255 108 12 / var(--tw-text-opacity));
-<<<<<<< Updated upstream
-}
-
-.text-slate-400 {
-  --tw-text-opacity: 1;
-  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 .text-gray-700 {
@@ -1429,27 +1128,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.text-slate-600 {
-  --tw-text-opacity: 1;
-  color: rgb(71 85 105 / var(--tw-text-opacity));
-}
-
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-slate-300 {
-  --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity));
 }
 
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-=======
->>>>>>> Stashed changes
 }
 
 .hover\:bg-blue-800:hover {
