@@ -5,8 +5,8 @@ module.exports = {
       colors: {
         first: '#ff6c0c',
         secondary: '#fe806b',
-        third: '#e6e6e6',
-        forth: '#2e2b26',
+        third: '#94a3b8',
+        forth: '#e2e8f0',
       },
     },
   },
