@@ -301,22 +301,32 @@
                         <!-- Row Menu Start -->
                         <div class="grid relative grid-cols-12 self-center mb-5">
                             <!-- Menu Start -->
-                            <a class="col-span-3 font-semibold mx-2 pb-3 border-b-2 rounded-b-sm border-first" :class="{'border-b-2 rounded-b-sm border-first': tab === 'description'}" href="#" @click.prevent="tab = 'description'">DESCRIPTION</a>
-                            <a class="col-span-3 col-start-5 font-semibold text-third mx-2 pb-3" :class="{'border-b-2 rounded-b-sm border-first': tab === 'howtouse'}" href="#" @click.prevent="tab = 'howtouse'">HOW TO USE</a>
+                            <a class="col-span-3 font-semibold mx-2 pb-3 border-b-2 rounded-b-sm border-first"
+                                :class="{'border-b-2 rounded-b-sm border-first': tab === 'description'}" href="#"
+                                @click.prevent="tab = 'description'">DESCRIPTION</a>
+                            <a class="col-span-3 col-start-5 font-semibold text-third mx-2 pb-3"
+                                :class="{'border-b-2 rounded-b-sm border-first': tab === 'howtouse'}" href="#"
+                                @click.prevent="tab = 'howtouse'">HOW TO USE</a>
                             <div class="absolute top-9 -z-10 left-2 h-[2px] w-[290px] rounded-full bg-third"></div>
                             <!-- Menu End -->
                         </div>
                         <!-- Row Menu End -->
                         <!-- Row Text Start -->
                         <div class="grid relative grid-cols-12 self-center mb-5 text-sm">
-                            <!-- Descripsi Start -->
-                            <p x-show="tab === 'description'" class="col-span-full">Text Description. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Voluptatem accusantium perferendis rem? Asperiores omnis dicta nisi at. Quia earum ipsam tempore numquam
-                                sit itaque quasi quidem non, nihil quaerat ducimus nesciunt provident commodi fuga fugiat illo, quibusdam veniam? Explicabo, nemo.</p>
-                            <p x-show="tab === 'howtouse'" class="col-span-full">Text How To Use. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Voluptatem accusantium perferendis rem? Asperiores omnis dicta nisi at. Quia earum ipsam tempore numquam
-                                sit itaque quasi quidem non, nihil quaerat ducimus nesciunt provident commodi fuga fugiat illo, quibusdam veniam? Explicabo, nemo.</p>
-                            <!-- Deskripsi End -->
+                            <!-- Text Start -->
+                            <p x-show="tab === 'description'" class="col-span-full">Text Description. Lorem ipsum dolor,
+                                sit amet consectetur adipisicing elit.
+                                Voluptatem accusantium perferendis rem? Asperiores omnis dicta nisi at. Quia earum ipsam
+                                tempore numquam
+                                sit itaque quasi quidem non, nihil quaerat ducimus nesciunt provident commodi fuga
+                                fugiat illo, quibusdam veniam? Explicabo, nemo.</p>
+                            <p x-show="tab === 'howtouse'" class="col-span-full">Text How To Use. Lorem ipsum dolor, sit
+                                amet consectetur adipisicing elit.
+                                Voluptatem accusantium perferendis rem? Asperiores omnis dicta nisi at. Quia earum ipsam
+                                tempore numquam
+                                sit itaque quasi quidem non, nihil quaerat ducimus nesciunt provident commodi fuga
+                                fugiat illo, quibusdam veniam? Explicabo, nemo.</p>
+                            <!-- Text End -->
                         </div>
                         <!-- Row Text End -->
                     </div>
