@@ -10,7 +10,29 @@
     <title>Product Page</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <style>
-        
+        .disable-scroll {
+            overflow: hidden;
+        }
+
+        .dm-modal {
+            width: 100%;
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            right: 0;
+            position: fixed;
+            z-index: 2347483657 !important;
+            transition: 1s ease all;
+        }
+
+        .dm-modal-hide {
+            opacity: 0;
+            user-select: none;
+            top: -200%;
+            transition: 1s ease all;
+        }
     </style>
 </head>
 
@@ -279,13 +301,55 @@
                         </div>
                         <!-- Row Weight / Volume End -->
                         <!-- Row Button Start -->
-                        <div class="grid grid-cols-12 self-center mb-5 text-xs">
+                        <div class="grid grid-cols-12 self-center gap-1 mb-5 text-sm">
                             <!-- Button Start -->
-                            <button class="col-span-4 py-1 h-fit w-36 border border-first rounded-md text-first"
-                                href="#">ADD TO BAG</button>
-                            <button class="py-1 h-fit w-36 border border-first rounded-md bg-first text-white"
-                                href="#">BUY NOW</button>
-                            <svg class=" col-start-9 h-8 fill-current items-center text-third"
+                            <!-- Add To Bag Start -->
+                            <button type="button"
+                                class="show-modal text-center px-5 py-1 col-span-3 col-start-1 border border-secondary rounded-md text-secondary">ADD
+                                TO BAG</button>
+                            <!-- Add To Bag End -->
+                            <!-- Buy Now Start -->
+                            <button type="button"
+                                class="text-center px-5 py-1 col-span-3 col-start-5 bg-red-400 rounded-md text-white">BUY
+                                NOW</button>
+                            <!-- Buy Now End -->
+                            <!-- Pop Up Start -->
+                            <div class="dm-modal dm-modal-hide bg-black bg-opacity-60 top-0 h-screen fixed z-10 justify-center items-center"
+                                data-trigger="show-modal">
+                                <div class="container rounded flex mt-10 justify-center">
+                                    <div class="bg-white relative opacity-100 rounded p-10 text-center w-[425px]">
+                                        <svg class="w-28 h-28 fill-current text-secondary mx-32 mb-5"
+                                            style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24">
+                                            <path class="st0"
+                                                d="M20.9,6H17V5c0-2.8-2.2-5-5-5S7,2.2,7,5v5h2V8h4V6H9V5c0-1.7,1.3-3,3-3c1.7,0,3,1.3,3,3v5h2V8h2.1l0.9,14H4.1  L4.9,8H5V6H3.1L1.9,24h20.1L20.9,6z" />
+                                        </svg>
+                                        <h2 class="text-2xl mb-3">SUDAH DITAMBAHKAN KE CHART KAMU</h2>
+                                        <div class="border-b-2 my-5"></div>
+                                        <div class="flex gap-10">
+                                            <img class="w-1/3" src="https://source.unsplash.com/1000x600?beach">
+                                            <div class="w-2/3 text-left">
+                                                <p class="font-bold">MUKKA</p>
+                                                <p>MUKKA LIP CREAM MATEE</p>
+                                                <p class="text-xs font-light">ORANGE</p>
+                                                <button
+                                                    class="px-10 py-[2px] bg-secondary rounded-md mt-5 text-white">VIEW
+                                                    CHART</button>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 absolute top-0 right-5">
+                                            <button type="button" class="dm-close-modal">
+                                                <svg class="w-10 fill-current text-forth" viewBox="0 0 24 24"
+                                                    width="24">
+                                                    <path d="M6 18L18 6M6 6L18 18" stroke="#94a3b8"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" /></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pop Up End -->
+                            <svg class="col-start-9 h-8 fill-current items-center text-third"
                                 style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
                                 <g>
                                     <g id="Icon-Heart" transform="translate(178.000000, 230.000000)">
@@ -642,7 +706,39 @@
         </div>
     </section>
     <script src="/dist/js/script.js"></script>
+    <script src="http://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
+    <script>
+        jQuery.noConflict();
+        jQuery(document).ready(function ($) {
+            /* Signup Pop Form */
+            if ($(".dm-modal")[0]) {
+                var dm_trigger_class = "." + $('.dm-modal').data("trigger");
+                $(dm_trigger_class).click(function (e) {
+                    e.preventDefault();
+                    $('.dm-modal').appendTo('body');
+                    $('.dm-modal').removeClass("dm-modal-hide").addClass("dm-visible");
+                    $('body').addClass("disable-scroll");
+                });
+                $('.dm-close-modal').click(function (e) {
+                    e.preventDefault();
+                    $('.dm-modal').addClass("dm-modal-hide").removeClass("dm-visible");
+                    $('body').removeClass("disable-scroll");
+                });
+                $('.dm-modal-mask').click(function (e) {
+                    e.preventDefault();
+                    $('.dm-modal').addClass("dm-modal-hide").removeClass("dm-visible");;
+                    $('body').removeClass("disable-scroll");
+                });
+                $(document).on("keyup", function (e) {
+                    if (e.key === "Escape") {
+                        $('.dm-modal').addClass("dm-modal-hide").removeClass("dm-visible");;
+                        $('body').removeClass("disable-scroll");
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
