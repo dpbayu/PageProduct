@@ -117,7 +117,9 @@
                                 </svg>
                             </div>
                             <div class="border-b-2 mb-5 mt-2"></div>
-                            <button class="w-full bg-secondary text-white">CHECK OUT</button>
+                            <button class="w-full bg-secondary text-white"
+                                :class="{tab === 'tab1'}" href="#"
+                                @click.prevent="tab = 'tab2'">CHECK OUT</button>
                             <!-- Text 2 -->
                         </div>
                     </div>
@@ -155,7 +157,7 @@
         <!-- Menu 3 End -->
         <!-- Container End -->
     </header>
-    <section>
+    <section x-show="tab === 'tab1'">
         <div class="container mx-auto">
             <div class="mx-20">
                 <!-- Menu Start -->
@@ -728,6 +730,9 @@
                 <!-- Bagian 3 End -->
             </div>
         </div>
+    </section>
+    <section x-show="tab === 'tab2'">
+        <h1>Hello World</h1>
     </section>
     <script src="/dist/js/script.js"></script>
     <script src="http://unpkg.com/jquery"></script>
