@@ -37,10 +37,10 @@
 </head>
 
 <body x-data="{
+    tab: 'tab1',
     tabdescription:'description',
-    isOpen: false,
+    modal: false,
     dropdown: false,
-    tab: 'tab1'
     }">
     <header>
         <div class="bg-secondary w-full h-5"></div>
@@ -82,7 +82,7 @@
                 <!-- Search End -->
                 <!-- Modal Checkout Start -->
                 <div class="relative">
-                    <a class="relative" @click="isOpen=true" href="#">
+                    <a class="relative" @click="modal=true" href="#">
                         <svg class="w-7 h-7 fill-current text-secondary" style="enable-background:new 0 0 24 24;"
                             version="1.1" viewBox="0 0 24 24">
                             <path class="st0"
@@ -93,7 +93,7 @@
                             1</p>
                     </a>
                     <div class="mx-auto absolute top-20px bg-white left-0 z-10 w-72 h-fit flex items-center shadow-lg overflow-y-auto"
-                        x-show="isOpen" @click.outside="isOpen=false">
+                        x-show="modal" @click.outside="modal=false">
                         <div class="container mx-auto rounded pt-2 pb-5 px-5 mt-2 overflow-y-auto">
                             <div class="bg-white rounded flex gap-5">
                                 <img class="w-1/4" src="https://source.unsplash.com/1000x600?music">
@@ -117,9 +117,8 @@
                                 </svg>
                             </div>
                             <div class="border-b-2 mb-5 mt-2"></div>
-                            <button class="w-full bg-secondary text-white"
-                                :class="{tab === 'tab1'}" href="#"
-                                @click.prevent="tab = 'tab2'">CHECK OUT</button>
+                            <button class="w-full bg-secondary text-white" href="#" @click.prevent="tab = 'tab2'">CHECK
+                                OUT</button>
                             <!-- Text 2 -->
                         </div>
                     </div>
@@ -157,6 +156,7 @@
         <!-- Menu 3 End -->
         <!-- Container End -->
     </header>
+    <!-- Section 1 Start -->
     <section x-show="tab === 'tab1'">
         <div class="container mx-auto">
             <div class="mx-20">
@@ -174,7 +174,7 @@
                 </div>
                 <!-- Menu End -->
                 <!-- Bagian 1 Start -->
-                <div class="flex gap-10 mb-5 h-fit w-full mt-10">
+                <div class="flex gap-10 mb-5 h-fit w-full mt-5">
                     <!-- Image Start -->
                     <div class="w-1/2 h-full flex-col">
                         <div class="relative">
@@ -196,7 +196,8 @@
                     <!-- Image End -->
                     <!-- Description Start -->
                     <div class="w-1/2 h-fit">
-                        <h1 class="font-medium mb-2 text-sm">MUKKA LIP CREAM MATEE</h1>
+                        <h1 class="font-medium mb-2 text-3xl">MUKKA LIP CREAM MATEE</h1>
+                        <!-- Star Start -->
                         <div class="flex items-center mb-2">
                             <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
@@ -223,6 +224,7 @@
                                     href="#">See review</a>
                             </p>
                         </div>
+                        <!-- Star End -->
                         <div class="flex gap-5 mb-2">
                             <p class="text-third font-thin text-xs">Rp 28.000</p>
                             <p class="font-medium text-secondary text-xl">Rp 25.200</p>
@@ -731,9 +733,11 @@
             </div>
         </div>
     </section>
+    <!-- Section 1 End -->
     <section x-show="tab === 'tab2'">
         <h1>Hello World</h1>
     </section>
+    <!-- Javascript Start -->
     <script src="/dist/js/script.js"></script>
     <script src="http://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
@@ -768,6 +772,7 @@
             }
         });
     </script>
+    <!-- Javascript End -->
 </body>
 
 </html>
