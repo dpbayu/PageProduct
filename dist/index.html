@@ -24,7 +24,6 @@
             right: 0;
             position: fixed;
             z-index: 2347483657 !important;
-            transition: 1s ease all;
         }
 
         .dm-modal2 {
@@ -37,10 +36,9 @@
             right: 0;
             position: fixed;
             z-index: 2347483657 !important;
-            transition: 1s ease all;
         }
 
-                .dm-modal3 {
+        .dm-modal3 {
             width: 100%;
             width: 100vw;
             height: 100vh;
@@ -50,14 +48,12 @@
             right: 0;
             position: fixed;
             z-index: 2347483657 !important;
-            transition: 1s ease all;
         }
 
         .dm-modal-hide {
             opacity: 0;
             user-select: none;
             top: -200%;
-            transition: 1s ease all;
         }
     </style>
 </head>
@@ -145,7 +141,7 @@
                             </div>
                             <div class="border-b-2 mb-5 mt-2"></div>
                             <button class="w-full bg-secondary text-white rounded-sm" href="#"
-                                @click.prevent="tab = 'tab2'">CHECK
+                                @click.prevent="tab = 'tab2'" @click="modal=false">CHECK
                                 OUT</button>
                             <!-- Text 2 -->
                         </div>
