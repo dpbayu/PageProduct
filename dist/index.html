@@ -14,7 +14,7 @@
             overflow: hidden;
         }
 
-        .dm-modal {
+        .dm-modal1 {
             width: 100%;
             width: 100vw;
             height: 100vh;
@@ -24,26 +24,54 @@
             right: 0;
             position: fixed;
             z-index: 2347483657 !important;
-            transition: 1s ease all;
+            /* transition: 1s ease all; */
+        }
+
+        .dm-modal2 {
+            width: 100%;
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            right: 0;
+            position: fixed;
+            z-index: 2347483657 !important;
+            /* transition: 1s ease all; */
+        }
+
+        .dm-modal3 {
+            width: 100%;
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            right: 0;
+            position: fixed;
+            z-index: 2347483657 !important;
+            /* transition: 1s ease all; */
         }
 
         .dm-modal-hide {
             opacity: 0;
             user-select: none;
             top: -200%;
-            transition: 1s ease all;
+            /* transition: 1s ease all; */
         }
     </style>
 </head>
 
 <body x-data="{
+    tab: 'tab1',
     tabdescription:'description',
-    isOpen: false,
+    modal: false,
     dropdown: false,
     }">
     <header>
         <div class="bg-secondary w-full h-5"></div>
-        <div class="bg-first text-white text-xs py-3 text-center font-medium">GRATIS ONGKIR MIN. BELANJA Rp 60.000</div>
+        <div class="bg-first text-white text-xs py-3 text-center font-medium" @click.prevent="tab = 'tab1'">GRATIS
+            ONGKIR MIN. BELANJA Rp 60.000</div>
         <!-- Container Start -->
         <div class="container mx-auto">
             <!-- Menu 1 Start -->
@@ -79,8 +107,9 @@
                     </svg>
                 </div>
                 <!-- Search End -->
+                <!-- Modal Checkout Start -->
                 <div class="relative">
-                    <a class="relative" @click="isOpen=true" href="#">
+                    <a class="relative" @click="modal=true" href="#">
                         <svg class="w-7 h-7 fill-current text-secondary" style="enable-background:new 0 0 24 24;"
                             version="1.1" viewBox="0 0 24 24">
                             <path class="st0"
@@ -90,11 +119,11 @@
                             class="absolute flex justify-center bg-red-700 top-0 left-0 text-white rounded-full w-3 h-3 text-[8px]">
                             1</p>
                     </a>
-                    <div class="mx-auto absolute top-20px bg-white left-0 z-10 w-72 h-fit flex items-center shadow-lg overflow-y-auto"
-                        x-show="isOpen" @click.outside="isOpen=false">
+                    <div class="mx-auto absolute top-20px bg-white left-0 z-10 w-72 h-fit flex rounded-md items-center shadow-lg overflow-y-auto"
+                        x-show="modal" @click.outside="modal=false">
                         <div class="container mx-auto rounded pt-2 pb-5 px-5 mt-2 overflow-y-auto">
                             <div class="bg-white rounded flex gap-5">
-                                <img class="w-1/4" src="https://source.unsplash.com/1000x600?music">
+                                <img class="w-1/4" src="https://source.unsplash.com/1000x600?headphone">
                                 <div class="w-3/4 relative">
                                     <p class="font-semibold">MUKKA</p>
                                     <p class="text-sm">MUKKA LIP CREAM MATEE</p>
@@ -115,10 +144,14 @@
                                 </svg>
                             </div>
                             <div class="border-b-2 mb-5 mt-2"></div>
-                            <button class="w-full bg-secondary text-white">CHECK OUT</button>
+                            <button class="w-full bg-secondary text-white rounded-sm" href="#"
+                                @click.prevent="tab = 'tab2'" @click="modal=false">CHECK
+                                OUT</button>
+                            <!-- Text 2 -->
                         </div>
                     </div>
                 </div>
+                <!-- Modal Checkout End -->
                 <a href="#">
                     <svg class="w-7 h-7 fill-current text-secondary" style="enable-background:new 0 0 512 512;"
                         version="1.1" viewBox="0 0 512 512">
@@ -151,7 +184,8 @@
         <!-- Menu 3 End -->
         <!-- Container End -->
     </header>
-    <section>
+    <!-- Section 1 Start -->
+    <section x-show="tab === 'tab1a'">
         <div class="container mx-auto">
             <div class="mx-20">
                 <!-- Menu Start -->
@@ -168,11 +202,11 @@
                 </div>
                 <!-- Menu End -->
                 <!-- Bagian 1 Start -->
-                <div class="flex gap-10 mb-5 h-fit w-full mt-10">
+                <div class="flex gap-10 mb-5 h-fit w-full mt-5">
                     <!-- Image Start -->
                     <div class="w-1/2 h-full flex-col">
                         <div class="relative">
-                            <img class="h-[500px] w-full mx-auto" src="https://source.unsplash.com/1000x600?beach">
+                            <img class="h-[402px] w-[402px] mx-auto" src="https://source.unsplash.com/1000x600?beach">
                             <button
                                 class="absolute bg-first top-0 left-0 text-white rounded-full w-10 h-10">10%</button>
                         </div>
@@ -190,8 +224,9 @@
                     <!-- Image End -->
                     <!-- Description Start -->
                     <div class="w-1/2 h-fit">
-                        <h1 class="font-medium mb-2 text-sm">MUKKA LIP CREAM MATEE</h1>
-                        <div class="flex items-center mb-2">
+                        <h1 class="font-medium mb-5 text-3xl">MUKKA LIP CREAM MATEE</h1>
+                        <!-- Star Start -->
+                        <div class="flex items-center mb-5">
                             <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
@@ -217,14 +252,15 @@
                                     href="#">See review</a>
                             </p>
                         </div>
-                        <div class="flex gap-5 mb-2">
+                        <!-- Star End -->
+                        <div class="flex gap-5 mb-5">
                             <p class="text-third font-thin text-xs">Rp 28.000</p>
                             <p class="font-medium text-secondary text-xl">Rp 25.200</p>
                         </div>
                         <p class="text-secondary font-thin mb-5">-10</p>
                         <!-- Row Quantity Start -->
                         <div class="grid grid-cols-12 mb-5 text-xs">
-                            <p class="col-span-4 text-slate-400">QUANTITY</p>
+                            <p class="col-span-4 text-third">QUANTITY</p>
                             <svg class="h-5 fill-current col-start-5 text-secondary"
                                 style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
                                 <path
@@ -240,25 +276,22 @@
                         <!-- Row Quantity End -->
                         <!-- Row Brand Start -->
                         <div class="grid grid-cols-12 self-center mb-5 text-xs">
-                            <p class="col-span-4 text-slate-400 self-center">BRAND</p>
+                            <p class="col-span-4 text-third self-center">BRAND</p>
                             <p class="col-start-5 col-span-4 text-secondary text-xl">MUK HAIR
                                 CARE</p>
                         </div>
                         <!-- Row Brand End -->
                         <!-- Row Variant Start -->
                         <div class="grid grid-cols-12 self-center mb-5 text-xs">
-                            <p class="col-span-4 text-slate-400">VARIANT</p>
+                            <p class="col-span-4 text-third">VARIANT</p>
                             <!-- Dorpdown Start -->
                             <button
                                 class="px-5 border rounded-t-md col-start-5 col-span-4 flex items-center justify-between"
                                 x-on:click="dropdown = true">
                                 <p>Orange</p>
-                                <svg class="h-8" style="enable-background:new 0 0 64 64;" version="1.1"
-                                    viewBox="0 0 64 64">
-                                    <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
-                                        <polyline class="st0" id="Fill-35"
-                                            points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
-                                    </g>
+                                <svg class="h-8 py-2" viewBox="0 0 96 96">
+                                    <path
+                                        d="M82.6074,62.1072,52.6057,26.1052a6.2028,6.2028,0,0,0-9.2114,0L13.3926,62.1072a5.999,5.999,0,1,0,9.2114,7.6879L48,39.3246,73.396,69.7951a5.999,5.999,0,1,0,9.2114-7.6879Z" />
                                 </svg>
                             </button>
                             <!-- Dropdown Menu Start -->
@@ -290,30 +323,30 @@
                         <!-- Row Colour End -->
                         <!-- Row Member Price Start -->
                         <div class="grid grid-cols-12 self-center mb-5 text-xs">
-                            <p class="col-span-4 text-slate-400 self-center">MEMBER PRICE</p>
+                            <p class="col-span-4 text-third self-center">MEMBER PRICE</p>
                             <p class="col-start-5 col-span-4 text-secondary text-sm">Rp 300.000 (-Rp 16.800)
                             </p>
-                            <p class="col-start-5 row-start-2 col-span-4 text-[10px] text-slate-400">for gold
+                            <p class="col-start-5 row-start-2 col-span-4 text-[10px] text-third">for gold
                                 member & up</p>
                         </div>
                         <!-- Row Member Price End -->
                         <!-- Row Referal Bonus Start -->
                         <div class="grid grid-cols-12 self-center mb-5 text-xs">
-                            <p class="col-span-4 text-slate-400 self-center">REFERAL BONUS</p>
+                            <p class="col-span-4 text-third self-center">REFERAL BONUS</p>
                             <p class="col-start-5 col-span-4 text-secondary text-sm">Rp 4.200
                             </p>
                         </div>
                         <!-- Row Referal Bonus End -->
                         <!-- Row Stock Start -->
                         <div class="grid grid-cols-12 self-center mb-5 text-xs">
-                            <p class="col-span-4 text-slate-400 self-center">STOCK</p>
+                            <p class="col-span-4 text-third self-center">STOCK</p>
                             <p class="col-start-5 col-span-4 text-secondary text-sm">24
                             </p>
                         </div>
                         <!-- Row Stock End -->
                         <!-- Row Weight / Volume Start -->
                         <div class="grid grid-cols-12 self-center mb-5 text-xs">
-                            <p class="col-span-4 text-slate-400 self-center">WEIGHT / VOLUME</p>
+                            <p class="col-span-4 text-third self-center">WEIGHT / VOLUME</p>
                             <p class="col-start-5 col-span-4 text-secondary text-sm">100gr
                             </p>
                         </div>
@@ -323,34 +356,29 @@
                             <!-- Button Start -->
                             <!-- Add To Bag Start -->
                             <button type="button"
-                                class="show-modal text-center px-5 py-1 col-span-3 col-start-1 border border-secondary rounded-md text-secondary">ADD
-                                TO BAG</button>
-                            <!-- Add To Bag End -->
-                            <!-- Buy Now Start -->
-                            <button type="button"
-                                class="text-center px-5 py-1 col-span-3 col-start-5 bg-red-400 rounded-md text-white">BUY
-                                NOW</button>
-                            <!-- Buy Now End -->
+                                class="show-modal1 text-center px-5 py-1 col-span-3 col-start-1 border border-secondary rounded-md text-secondary">ADD
+                                TO BAG
+                            </button>
                             <!-- Pop Up Start -->
-                            <div class="dm-modal dm-modal-hide bg-black bg-opacity-60 top-0 h-screen fixed z-10 justify-center items-center"
-                                data-trigger="show-modal">
-                                <div class="container rounded flex mt-10 justify-center">
-                                    <div class="bg-white relative opacity-100 rounded p-10 text-center w-[425px]">
-                                        <svg class="w-28 h-28 fill-current text-secondary mx-32 mb-5"
+                            <div class="dm-modal1 dm-modal-hide bg-black bg-opacity-60 top-0 h-screen fixed z-10 justify-center items-center"
+                                data-trigger="show-modal1">
+                                <div class="rounded flex items-center h-full justify-center">
+                                    <div class="bg-white relative flex-col justify-center opacity-100 rounded p-10 w-[600px] h-[600px] text-center">
+                                        <svg class="h-[130px] fill-current text-secondary flex w-full mb-5"
                                             style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24">
                                             <path class="st0"
                                                 d="M20.9,6H17V5c0-2.8-2.2-5-5-5S7,2.2,7,5v5h2V8h4V6H9V5c0-1.7,1.3-3,3-3c1.7,0,3,1.3,3,3v5h2V8h2.1l0.9,14H4.1  L4.9,8H5V6H3.1L1.9,24h20.1L20.9,6z" />
                                         </svg>
-                                        <h2 class="text-2xl mb-3">SUDAH DITAMBAHKAN KE CHART KAMU</h2>
+                                        <h2 class="text-[34px] mb-3">SUDAH DITAMBAHKAN KE CHART KAMU</h2>
                                         <div class="border-b-2 my-5"></div>
-                                        <div class="flex gap-10">
-                                            <img class="w-1/3" src="https://source.unsplash.com/1000x600?beach">
+                                        <div class="flex gap-5">
+                                            <img class="w-[200px] h-[200px]" src="https://source.unsplash.com/1000x600?beach">
                                             <div class="w-2/3 text-left">
-                                                <p class="font-bold">MUKKA</p>
-                                                <p>MUKKA LIP CREAM MATEE</p>
-                                                <p class="text-xs font-light">ORANGE</p>
+                                                <p class="font-medium text-[25px]">MUKKA</p>
+                                                <p class="text-[25px]">MUKKA LIP CREAM MATEE</p>
+                                                <p class="text-[15px] font-light">ORANGE</p>
                                                 <button
-                                                    class="px-10 py-[2px] bg-secondary rounded-md mt-5 text-white">VIEW
+                                                    class="w-[200px] h-[45px] text-[20px] bg-secondary rounded-md mt-14 text-white">VIEW
                                                     CHART</button>
                                             </div>
                                         </div>
@@ -367,6 +395,13 @@
                                 </div>
                             </div>
                             <!-- Pop Up End -->
+                            <!-- Add To Bag End -->
+                            <!-- Buy Now Start -->
+                            <button type="button"
+                                class="text-center px-5 py-1 col-span-3 col-start-5 bg-red-400 rounded-md text-white">BUY
+                                NOW
+                            </button>
+                            <!-- Buy Now End -->
                             <svg class="col-start-9 h-8 fill-current items-center text-third"
                                 style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
                                 <g>
@@ -383,11 +418,11 @@
                         <!-- Row Menu Start -->
                         <div class="grid relative grid-cols-12 self-center mb-5">
                             <!-- Menu Start -->
-                            <a class="col-span-3 font-semibold mx-2 pb-3 border-b-2 rounded-b-sm border-first"
-                                :class="{'border-b-2 rounded-b-sm border-first': tabdescription === 'description'}"
+                            <a class="col-span-3 font-semibold mx-2 pb-3 border-b-2 text-third rounded-b-sm border-first"
+                                :class="{'border-b-2 text-black rounded-b-sm border-first': tabdescription === 'description'}"
                                 href="#" @click.prevent="tabdescription = 'description'">DESCRIPTION</a>
                             <a class="col-span-3 col-start-5 font-semibold text-third mx-2 pb-3"
-                                :class="{'border-b-2 rounded-b-sm border-first': tabdescription === 'howtouse'}"
+                                :class="{'border-b-2 text-black rounded-b-sm border-first': tabdescription === 'howtouse'}"
                                 href="#" @click.prevent="tabdescription = 'howtouse'">HOW TO USE</a>
                             <div class="absolute top-9 -z-10 left-2 h-[2px] w-[290px] rounded-full bg-third"></div>
                             <!-- Menu End -->
@@ -418,15 +453,15 @@
                 </div>
                 <!-- Bagian 1 End -->
                 <!-- Bagian 2 Start -->
-                <div class="grid grid-cols-12 w-fulljustify-evenly mb-5 gap-10">
-                    <p class="col-start-1 col-span-2">PEOPLE ALSO BUY</p>
-                    <div class="col-start-3 col-span-full self-center border-2 border-t-first w-full"></div>
+                <div class="flex w-fulljustify-evenly mb-5">
+                    <p class="w-[155px]">PEOPLE ALSO BUY</p>
+                    <div class="self-center border-t-2 border-third w-full"></div>
                 </div>
-                <div class="flex gap-5 mb-5 w-full">
+                <div class="flex gap-5 w-full h-full mb-5">
                     <!-- Produk 1 Start -->
-                    <div class="flex-col w-48 relative">
+                    <div class="flex-col w-[180px] h-fit relative">
                         <button
-                            class="absolute bg-first top-0 left-0 text-white rounded-full w-7 h-7 text-xs">30%</button>
+                            class="absolute bg-first top-0 left-0 text-white rounded-full w-[25px] h-[25px] text-2xs">30%</button>
                         <svg class="absolute top-0 right-0 col-start-9 h-8 fill-current items-center text-third"
                             style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
                             <g>
@@ -437,30 +472,30 @@
                                 </g>
                             </g>
                         </svg>
-                        <img class="w-full h-[200px]" src="https://source.unsplash.com/1000x600?woman">
+                        <img class="w-[180px] h-[285px]" src="https://source.unsplash.com/1000x600?woman">
                         <p class="font-medium">MUK HAIR CARE</p>
                         <P class="text-third text-sm">Deep Muk Ultra Soft Shampoo</P>
                         <p class="text-third text-sm">Rp 300.000</p>
                         <p class="font-medium text-first">Rp 240.000</p>
                         <p class="text-first">30%</p>
                         <div class="flex items-center">
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
@@ -469,9 +504,9 @@
                     </div>
                     <!-- Produk 1 End -->
                     <!-- Produk 2 Start -->
-                    <div class="flex-col w-48 relative">
+                    <div class="flex-col w-[180px] h-fit relative">
                         <button
-                            class="absolute bg-first top-0 left-0 text-white rounded-full w-7 h-7 text-xs">30%</button>
+                        class="absolute bg-first top-0 left-0 text-white rounded-full w-[25px] h-[25px] text-2xs">30%</button>
                         <svg class="absolute top-0 right-0 col-start-9 h-8 fill-current items-center text-third"
                             style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
                             <g>
@@ -482,30 +517,30 @@
                                 </g>
                             </g>
                         </svg>
-                        <img class="w-full h-[200px]" src="https://source.unsplash.com/1000x600?man">
+                        <img class="w-[180px] h-[285px]" src="https://source.unsplash.com/1000x600?man">
                         <p class="font-medium">MUK HAIR CARE</p>
                         <P class="text-third text-sm">Deep Muk Ultra Soft Shampoo</P>
                         <p class="text-third text-sm">Rp 300.000</p>
                         <p class="font-medium text-first">Rp 240.000</p>
                         <p class="text-first">30%</p>
                         <div class="flex items-center">
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
@@ -514,9 +549,9 @@
                     </div>
                     <!-- Produk 2 End -->
                     <!-- Produk 3 Start -->
-                    <div class="flex-col w-48 relative">
+                    <div class="flex-col w-[180px] h-fit relative">
                         <button
-                            class="absolute bg-first top-0 left-0 text-white rounded-full w-7 h-7 text-xs">30%</button>
+                        class="absolute bg-first top-0 left-0 text-white rounded-full w-[25px] h-[25px] text-2xs">30%</button>
                         <svg class="absolute top-0 right-0 col-start-9 h-8 fill-current items-center text-third"
                             style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
                             <g>
@@ -527,30 +562,30 @@
                                 </g>
                             </g>
                         </svg>
-                        <img class="w-full h-[200px]" src="https://source.unsplash.com/1000x600?cat">
+                        <img class="w-[180px] h-[285px]" src="https://source.unsplash.com/1000x600?cat">
                         <p class="font-medium">MUK HAIR CARE</p>
                         <P class="text-third text-sm">Deep Muk Ultra Soft Shampoo</P>
                         <p class="text-third text-sm">Rp 300.000</p>
                         <p class="font-medium text-first">Rp 240.000</p>
                         <p class="text-first">30%</p>
                         <div class="flex items-center">
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
@@ -559,9 +594,9 @@
                     </div>
                     <!-- Produk 3 End -->
                     <!-- Produk 4 Start -->
-                    <div class="flex-col w-48 relative">
+                    <div class="flex-col w-[180px] h-fit relative">
                         <button
-                            class="absolute bg-first top-0 left-0 text-white rounded-full w-7 h-7 text-xs">30%</button>
+                        class="absolute bg-first top-0 left-0 text-white rounded-full w-[25px] h-[25px] text-2xs">30%</button>
                         <svg class="absolute top-0 right-0 col-start-9 h-8 fill-current items-center text-third"
                             style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
                             <g>
@@ -572,30 +607,30 @@
                                 </g>
                             </g>
                         </svg>
-                        <img class="w-full h-[200px]" src="https://source.unsplash.com/1000x600?dog">
+                        <img class="w-[180px] h-[285px]" src="https://source.unsplash.com/1000x600?dog">
                         <p class="font-medium">MUK HAIR CARE</p>
                         <P class="text-third text-sm">Deep Muk Ultra Soft Shampoo</P>
                         <p class="text-third text-sm">Rp 300.000</p>
                         <p class="font-medium text-first">Rp 240.000</p>
                         <p class="text-first">30%</p>
                         <div class="flex items-center">
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
-                            <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                            <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                 <path
                                     d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                             </svg>
@@ -606,7 +641,7 @@
                 </div>
                 <!-- Bagian 2 End -->
                 <!-- Bagian 3 Start -->
-                <div class="flex flex-wrap w-full border border-slate-300 h-fit py-5 px-10 mb-5 gap-1">
+                <div class="flex flex-wrap w-[full] rounded-sm border border-third h-fit py-5 px-10 mb-5 gap-1">
                     <p class="font-medium text-xl w-full">PRODUK REVIEW (120)</p>
                     <p class="text-sm text-third font-medium w-full">DEEP MUK ULTRA SOFT SHAMPOO</p>
                     <div class="flex gap-48 w-full justify-between">
@@ -615,23 +650,23 @@
                             <p class="font-medium text-slate-600 w-40"><span class="text-8xl text-black">4.5</span> / 5
                             </p>
                             <div class="flex justify-center mt-3">
-                                <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                                <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                     <path
                                         d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                                 </svg>
-                                <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                                <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                     <path
                                         d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                                 </svg>
-                                <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                                <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                     <path
                                         d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                                 </svg>
-                                <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                                <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                     <path
                                         d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                                 </svg>
-                                <svg class="h-6 fill-current text-secondary" viewBox="0 0 24 24">
+                                <svg class="h-[17px] fill-current text-secondary" viewBox="0 0 24 24">
                                     <path
                                         d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                                 </svg>
@@ -647,9 +682,9 @@
                                         <path
                                             d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                                     </svg>
-                                    <div class=" relative self-center border h-2 bg-forth rounded-full w-full">
+                                    <div class="relative self-center border h-2 bg-forth rounded-full w-[170px]">
                                         <div
-                                            class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full w-[155px]">
+                                            class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full w-[120px]">
                                         </div>
                                     </div>
                                 </div>
@@ -658,9 +693,9 @@
                                         <path
                                             d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                                     </svg>
-                                    <div class=" relative self-center border h-2 bg-forth rounded-full w-full">
+                                    <div class="relative self-center border h-2 bg-forth rounded-full w-[170px]">
                                         <div
-                                            class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full w-[125px]">
+                                            class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full w-[120px]">
                                         </div>
                                     </div>
                                 </div>
@@ -669,9 +704,9 @@
                                         <path
                                             d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                                     </svg>
-                                    <div class=" relative self-center border h-2 bg-forth rounded-full w-full">
+                                    <div class="relative self-center border h-2 bg-forth rounded-full w-[170px]">
                                         <div
-                                            class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full w-[25px]">
+                                            class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full w-[120px]">
                                         </div>
                                     </div>
                                 </div>
@@ -680,9 +715,9 @@
                                         <path
                                             d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                                     </svg>
-                                    <div class=" relative self-center border h-2 bg-forth rounded-full w-full">
+                                    <div class="relative self-center border h-2 bg-forth rounded-full w-[170px]">
                                         <div
-                                            class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full">
+                                            class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full w-[120px]">
                                         </div>
                                     </div>
                                 </div>
@@ -691,9 +726,9 @@
                                         <path
                                             d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z" />
                                     </svg>
-                                    <div class=" relative self-center border h-2 bg-forth rounded-full w-full">
+                                    <div class="relative self-center border h-2 bg-forth rounded-full w-[170px]">
                                         <div
-                                            class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full">
+                                            class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full w-[120px]">
                                         </div>
                                     </div>
                                 </div>
@@ -705,7 +740,7 @@
                             <p class="font-bold mb-5">HOW YOU TRIED THIS PRODUCT</p>
                             <p class="text-xs text-center text-third mb-5">Puas dengan produk yang kamu beli?</p>
                             <p class="text-xs text-center mb-5 text-third">Bagikan pendapatmu yuk!</p>
-                            <button class="bg-black text-white w-full rounded-md">ADD REVIEW</button>
+                            <button class="bg-black text-white w-[255px] h-[27px] rounded-md">ADD REVIEW</button>
                         </div>
                         <!-- Third End -->
                     </div>
@@ -713,10 +748,11 @@
                     <div class="mt-10">
                         <p class="font-bold mb-5">USER PHOTOS</p>
                         <div class="flex gap-5">
-                            <div class="h-20 w-20 bg-black rounded-md"></div>
-                            <div class="h-20 w-20 bg-black rounded-md"></div>
-                            <div class="h-20 w-20 bg-black rounded-md"></div>
-                            <div class="h-20 w-20 bg-black rounded-md"></div>
+                            <div class="h-[86px] w-[86px] bg-black rounded-md"></div>
+                            <div class="h-[86px] w-[86px] bg-black rounded-md"></div>
+                            <div class="h-[86px] w-[86px] bg-black rounded-md"></div>
+                            <div class="h-[86px] w-[86px] bg-black rounded-md"></div>
+                            <div class="h-[86px] w-[86px] bg-black rounded-md"></div>
                         </div>
                     </div>
                     <!-- User Photo End -->
@@ -725,40 +761,822 @@
             </div>
         </div>
     </section>
+    <!-- Section 1 End -->
+    <!-- Section 2 Start -->
+    <section x-show="tab === 'tab2'">
+        <div class="container mx-auto mb-32">
+            <div class="mx-20">
+                <h1 class="font-medium mb-5 text-3xl my-5">Checkout</h1>
+                <div class="flex gap-5">
+                    <div class="w-2/3">
+                        <div class="border-t ml-14"></div>
+                        <div class="flex items-center gap-5">
+                            <img class="h-10 my-5" src="https://source.unsplash.com/1000x600?shoes">
+                            <p>Jakarta</p>
+                        </div>
+                        <!-- 1 Product Start -->
+                        <div class="flex items-center gap-5 mb-5">
+                            <input type="checkbox" class="h-9 w-9 rounded-lg checked:bg-blue-500" />
+                            <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
+                                <img class="h-full w-20" src="https://source.unsplash.com/1000x600?water">
+                                <div class="flex-col">
+                                    <p class="font-semibold text-sm">MUKKA</p>
+                                    <p class="text-sm">MUKKA LIP CREAM MATEE</p>
+                                    <div class="flex items-center">
+                                        <p class="text-xs text-third text-medium w-1/3">Variant</p>
+                                        <span class="text-black w-2/3 text-sm">ORANGE</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <p class="text-sm text-third text-medium w-1/3">Berat</p>
+                                        <span class="text-black w-2/3">100gr</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5 items-center mb-10">
+                                    <div class="flex-col items-center">
+                                        <p class="font-semibold text-xs my-1 text-third"><s>Rp 28.000</s></p>
+                                        <p class="font-semibold text-xs my-1 text-secondary">Rp 25.200</p>
+                                        <p class="text-base text-medium text-secondary">-10%</p>
+                                    </div>
+                                    <div class="flex gap-5 items-center">
+                                        <div class="flex items-center h-fit">
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                            </svg>
+                                            <p class="text-center border-b border-black text-[29px] w-20">1
+                                            </p>
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <p class="font-semibold text-xs">Rp 25.200</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="h-[22px] w-[22px] fill-current text-third" viewBox="0 0 32 32">
+                                            <path class="cls-1"
+                                                d="M24,31H8a3,3,0,0,1-3-3V9A1,1,0,0,1,7,9V28a1,1,0,0,0,1,1H24a1,1,0,0,0,1-1V9a1,1,0,0,1,2,0V28A3,3,0,0,1,24,31Z">
+                                            </path>
+                                            <path class="cls-1" d="M28,7H4A1,1,0,0,1,4,5H28a1,1,0,0,1,0,2Z"></path>
+                                            <path class="cls-1"
+                                                d="M20,7a1,1,0,0,1-1-1V3H13V6a1,1,0,0,1-2,0V2a1,1,0,0,1,1-1h8a1,1,0,0,1,1,1V6A1,1,0,0,1,20,7Z">
+                                            </path>
+                                            <path class="cls-1"
+                                                d="M16,26a1,1,0,0,1-1-1V11a1,1,0,0,1,2,0V25A1,1,0,0,1,16,26Z"></path>
+                                            <path class="cls-1"
+                                                d="M21,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,21,24Z"></path>
+                                            <path class="cls-1"
+                                                d="M11,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,11,24Z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 1 Product End -->
+                        <!-- 2 Product Start -->
+                        <div class="flex items-center gap-5 mb-5">
+                            <input type="checkbox" class="h-8 w-8 rounded-lg checked:bg-blue-500" />
+                            <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
+                                <img class="h-full w-20" src="https://source.unsplash.com/1000x600?card">
+                                <div class="flex-col">
+                                    <p class="font-semibold text-sm">MUKKA</p>
+                                    <p class="text-sm">MUKKA LIP CREAM MATEE</p>
+                                    <div class="flex items-center">
+                                        <p class="text-xs text-third text-medium w-1/3">Variant</p>
+                                        <span class="text-black w-2/3 text-sm">ORANGE</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <p class="text-sm text-third text-medium w-1/3">Berat</p>
+                                        <span class="text-black w-2/3">100gr</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5 items-center mb-10">
+                                    <div class="flex-col items-center">
+                                        <p class="font-semibold text-xs my-1 text-third"><s>Rp 28.000</s></p>
+                                        <p class="font-semibold text-xs my-1 text-secondary">Rp 25.200</p>
+                                        <p class="text-base text-medium text-secondary">-10%</p>
+                                    </div>
+                                    <div class="flex gap-5 items-center">
+                                        <div class="flex items-center h-fit">
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                            </svg>
+                                            <p class="text-center border-b border-black text-[29px] w-20">1
+                                            </p>
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <p class="font-semibold text-xs">Rp 25.200</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="h-[22px] w-[22px] fill-current text-third" viewBox="0 0 32 32">
+                                            <path class="cls-1"
+                                                d="M24,31H8a3,3,0,0,1-3-3V9A1,1,0,0,1,7,9V28a1,1,0,0,0,1,1H24a1,1,0,0,0,1-1V9a1,1,0,0,1,2,0V28A3,3,0,0,1,24,31Z">
+                                            </path>
+                                            <path class="cls-1" d="M28,7H4A1,1,0,0,1,4,5H28a1,1,0,0,1,0,2Z"></path>
+                                            <path class="cls-1"
+                                                d="M20,7a1,1,0,0,1-1-1V3H13V6a1,1,0,0,1-2,0V2a1,1,0,0,1,1-1h8a1,1,0,0,1,1,1V6A1,1,0,0,1,20,7Z">
+                                            </path>
+                                            <path class="cls-1"
+                                                d="M16,26a1,1,0,0,1-1-1V11a1,1,0,0,1,2,0V25A1,1,0,0,1,16,26Z"></path>
+                                            <path class="cls-1"
+                                                d="M21,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,21,24Z"></path>
+                                            <path class="cls-1"
+                                                d="M11,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,11,24Z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 2 Product End -->
+                        <!-- 3 Product Start -->
+                        <div class="flex items-center gap-5 mb-5">
+                            <input type="checkbox" class="h-8 w-8 rounded-lg checked:bg-blue-500" />
+                            <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
+                                <img class="h-full w-20" src="https://source.unsplash.com/1000x600?tea">
+                                <div class="flex-col">
+                                    <p class="font-semibold text-sm">MUKKA</p>
+                                    <p class="text-sm">MUKKA LIP CREAM MATEE</p>
+                                    <div class="flex items-center">
+                                        <p class="text-xs text-third text-medium w-1/3">Variant</p>
+                                        <span class="text-black w-2/3 text-sm">ORANGE</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <p class="text-sm text-third text-medium w-1/3">Berat</p>
+                                        <span class="text-black w-2/3">100gr</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5 items-center mb-10">
+                                    <div class="flex-col items-center">
+                                        <p class="font-semibold text-xs my-1 text-third"><s>Rp 28.000</s></p>
+                                        <p class="font-semibold text-xs my-1 text-secondary">Rp 25.200</p>
+                                        <p class="text-base text-medium text-secondary">-10%</p>
+                                    </div>
+                                    <div class="flex gap-5 items-center">
+                                        <div class="flex items-center h-fit">
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                            </svg>
+                                            <p class="text-center border-b border-black text-[29px] w-20">1
+                                            </p>
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <p class="font-semibold text-xs">Rp 25.200</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="h-[22px] w-[22px] fill-current text-third" viewBox="0 0 32 32">
+                                            <path class="cls-1"
+                                                d="M24,31H8a3,3,0,0,1-3-3V9A1,1,0,0,1,7,9V28a1,1,0,0,0,1,1H24a1,1,0,0,0,1-1V9a1,1,0,0,1,2,0V28A3,3,0,0,1,24,31Z">
+                                            </path>
+                                            <path class="cls-1" d="M28,7H4A1,1,0,0,1,4,5H28a1,1,0,0,1,0,2Z"></path>
+                                            <path class="cls-1"
+                                                d="M20,7a1,1,0,0,1-1-1V3H13V6a1,1,0,0,1-2,0V2a1,1,0,0,1,1-1h8a1,1,0,0,1,1,1V6A1,1,0,0,1,20,7Z">
+                                            </path>
+                                            <path class="cls-1"
+                                                d="M16,26a1,1,0,0,1-1-1V11a1,1,0,0,1,2,0V25A1,1,0,0,1,16,26Z"></path>
+                                            <path class="cls-1"
+                                                d="M21,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,21,24Z"></path>
+                                            <path class="cls-1"
+                                                d="M11,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,11,24Z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 3 Product End -->
+                        <div class="flex items-center gap-5">
+                            <img class="h-10 my-5" src="https://source.unsplash.com/1000x600?sound">
+                            <p>Jakarta</p>
+                        </div>
+                        <!-- 4 Product Start -->
+                        <div class="flex items-center gap-5 mb-5">
+                            <input type="checkbox" class="h-8 w-8 rounded-lg checked:bg-blue-500" />
+                            <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
+                                <img class="h-full w-20" src="https://source.unsplash.com/1000x600?milk">
+                                <div class="flex-col">
+                                    <p class="font-semibold text-sm">BEAUTY WORLD</p>
+                                    <p class="text-sm">MUKKA LIP CREAM MATEE</p>
+                                    <div class="flex items-center">
+                                        <p class="text-xs text-third text-medium w-1/3">Variant</p>
+                                        <span class="text-black w-2/3 text-sm">ORANGE</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <p class="text-sm text-third text-medium w-1/3">Berat</p>
+                                        <span class="text-black w-2/3">100gr</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5 items-center mb-10">
+                                    <div class="flex-col items-center">
+                                        <p class="font-semibold text-xs my-1 text-third"><s>Rp 28.000</s></p>
+                                        <p class="font-semibold text-xs my-1 text-secondary">Rp 25.200</p>
+                                        <p class="text-base text-medium text-secondary">-10%</p>
+                                    </div>
+                                    <div class="flex gap-5 items-center">
+                                        <div class="flex items-center h-fit">
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                            </svg>
+                                            <p class="text-center border-b border-black text-[29px] w-20">1
+                                            </p>
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <p class="font-semibold text-xs">Rp 25.200</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="h-[22px] w-[22px] fill-current text-third" viewBox="0 0 32 32">
+                                            <path class="cls-1"
+                                                d="M24,31H8a3,3,0,0,1-3-3V9A1,1,0,0,1,7,9V28a1,1,0,0,0,1,1H24a1,1,0,0,0,1-1V9a1,1,0,0,1,2,0V28A3,3,0,0,1,24,31Z">
+                                            </path>
+                                            <path class="cls-1" d="M28,7H4A1,1,0,0,1,4,5H28a1,1,0,0,1,0,2Z"></path>
+                                            <path class="cls-1"
+                                                d="M20,7a1,1,0,0,1-1-1V3H13V6a1,1,0,0,1-2,0V2a1,1,0,0,1,1-1h8a1,1,0,0,1,1,1V6A1,1,0,0,1,20,7Z">
+                                            </path>
+                                            <path class="cls-1"
+                                                d="M16,26a1,1,0,0,1-1-1V11a1,1,0,0,1,2,0V25A1,1,0,0,1,16,26Z"></path>
+                                            <path class="cls-1"
+                                                d="M21,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,21,24Z"></path>
+                                            <path class="cls-1"
+                                                d="M11,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,11,24Z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 4 Product End -->
+                        </div>
+                        <!-- 4 Product Start -->
+                    </div>
+                    <div class="w-1/3">
+                        <div class="border rounded-md w-full h-fit p-5">
+                            <div class="flex-col">
+                                <!-- Dorpdown Start -->
+                                <button class="w-full px-5 border rounded-t-md flex items-center justify-between"
+                                    x-on:click="dropdown = true">
+                                    <p class="font-medium text-first text-lg py-2">Pakai Voucher Promo</p>
+                                    <svg class="h-5 fill-current text-first" viewBox="0 0 96 96">
+                                        <path
+                                            d="M81.8457,25.3876a6.0239,6.0239,0,0,0-8.45.7676L48,56.6257l-25.396-30.47a5.999,5.999,0,1,0-9.2114,7.6879L43.3943,69.8452a5.9969,5.9969,0,0,0,9.2114,0L82.6074,33.8431A6.0076,6.0076,0,0,0,81.8457,25.3876Z" />
+                                    </svg>
+                                </button>
+                                <!-- Dropdown Menu Start -->
+                                <!-- <div class="border rounded-b-md text-third text-sm px-5 py-1 z-10 bg-white shadow-md"
+                                    x-show="dropdown" @click.outside="dropdown = false">
+                                    <div class=" flex justify-between items-center cursor-pointer mb-2">
+                                        <p>Jakarta (1k)</p>
+                                        <input type="checkbox" class="rounded-full" />
+                                    </div>
+                                    <div class=" flex justify-between items-center cursor-pointer mb-2">
+                                        <p>Bandung (2)</p>
+                                        <input type="checkbox" class="rounded-full" />
+                                    </div>
+                                    <div class=" flex justify-between items-center cursor-pointer mb-2">
+                                        <p>Surabaya (1307)</p>
+                                        <input type="checkbox" class="rounded-full" />
+                                    </div>
+                                    <div class=" flex justify-between items-center cursor-pointer mb-2">
+                                        <p>Bali (15)</p>
+                                        <input type="checkbox" class="rounded-full" />
+                                    </div>
+                                    <div class=" flex justify-between items-center cursor-pointer mb-2">
+                                        <p>Makassar (570)</p>
+                                        <input type="checkbox" class="rounded-full" />
+                                    </div>
+                                </div> -->
+                                <!-- Dropdown Menu End -->
+                                <!-- Dropdown End -->
+                                <h1 class="font-bold text-xl my-5">Pembelanjaan</h1>
+                                <div class="flex justify-between mb-2">
+                                    <p>Total Harga</p>
+                                    <p>Rp 75.600</p>
+                                </div>
+                                <div class="flex justify-between mb-2">
+                                    <p>Diskon</p>
+                                    <p>Rp 0</p>
+                                </div>
+                                <div class="flex justify-between mb-2">
+                                    <p>CashBack</p>
+                                    <p>Rp 0</p>
+                                </div>
+                                <!-- Belanja Start -->
+                                <button
+                                    class="bg-secondary show-modal2 py-1 font-medium w-full rounded-md text-white my-2">Belanja
+                                    (2)</button>
+                                <!-- Pop Up Start -->
+                                <div class="dm-modal2 dm-modal-hide bg-black bg-opacity-60 top-0 h-screen fixed z-10 justify-center items-center"
+                                    data-trigger="show-modal2">
+                                    <div class="rounded h-full items-center flex justify-center">
+                                        <div
+                                            class="bg-white relative opacity-100 rounded py-10 px-5 text-center w-[600px] h-[600px]">
+                                            <div class="flex my-5 gap-5">
+                                                <input
+                                                    class="placeholder:placeholder:text-slate-400 w-[325px] text-xs block bg-white border h-7 border-slate-300 rounded-sm"
+                                                    placeholder="Masukkan kode voucher kamu disini ya ...."
+                                                    type="text" />
+                                                <p class="w-[230px] h-[30px] text-[18px] bg-neutral-800 text-first font-medium">Gunakan</p>
+                                            </div>
+                                            <h2 class="text-first font-bold text-left mb-5">Voucher Saya</h2>
+                                            <div class="w-full h-[108px] mb-5 border cursor-pointer border-black">
+                                                <p
+                                                    class="text-3xl h-full flex items-center justify-center text-secondary">
+                                                    VOUCHER FREE ONGKIR</p>
+                                            </div>
+                                            <div class="w-full h-[108px] mb-5 border cursor-pointer border-black">
+                                                <p
+                                                    class="text-3xl h-full flex items-center justify-center text-secondary dm-close-modal" @click.prevent="tab = 'tab3'">
+                                                    VOUCHER CASHBACK</p>
+                                            </div>
+                                            <div class="w-full h-[108px] mb-5 border cursor-pointer border-black">
+                                                <p
+                                                    class="text-3xl h-full flex items-center justify-center text-secondary">
+                                                    VOUCHER DISKON 78%</p>
+                                            </div>
+                                            <div
+                                                class="mt-2 absolute w-full flex justify-between items-end left-0 top-0">
+                                                <h1 class="text-first px-5 font-base">Pakai Voucher Promo</h1>
+                                                <button type="button" class="dm-close-modal">
+                                                    <svg class="w-10 fill-current text-forth" viewBox="0 0 24 24"
+                                                        width="24">
+                                                        <path d="M6 18L18 6M6 6L18 18" stroke="#94a3b8"
+                                                            stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" /></svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pop Up End -->
+                                <!-- Belanja End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Section 2 End -->
+    <!-- Section 3 Start -->
+    <section x-show="tab === 'tab1'">
+        <div class="container mx-auto mb-32">
+            <div class="mx-20">
+                <h1 class="font-medium mb-5 text-3xl my-5">Checkout</h1>
+                <div class="flex gap-5">
+                    <div class="w-2/3">
+                        <div class="border-t ml-14"></div>
+                        <div class="flex items-center gap-5">
+                            <img class="h-10 my-5" src="https://source.unsplash.com/1000x600?shoes">
+                            <svg class="h-5 fill-current text-first" viewBox="0 0 96 96">
+                                <path
+                                    d="M81.8457,25.3876a6.0239,6.0239,0,0,0-8.45.7676L48,56.6257l-25.396-30.47a5.999,5.999,0,1,0-9.2114,7.6879L43.3943,69.8452a5.9969,5.9969,0,0,0,9.2114,0L82.6074,33.8431A6.0076,6.0076,0,0,0,81.8457,25.3876Z" />
+                            </svg>
+                            <p class="text-third">Jakarta</p>
+                        </div>
+                        <!-- 1 Product Start -->
+                        <div class="flex items-center gap-5 mb-5">
+                            <input type="checkbox" class="h-8 w-8 rounded-lg checked:bg-blue-500">
+                            <div class="w-full h-[140px] justify-between p-5 border flex gap-5 rounded-sm">
+                                <img class="h-full w-20" src="https://source.unsplash.com/1000x600?water">
+                                <div class="flex-col">
+                                    <p class="font-semibold text-sm">MUKKA</p>
+                                    <p class="text-sm">MUKKA LIP CREAM MATEE</p>
+                                    <div class="flex items-center">
+                                        <p class="text-xs text-third text-medium w-1/3">Variant</p>
+                                        <span class="text-black w-2/3 text-sm">YELLOW</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <p class="text-sm text-third text-medium w-1/3">Berat</p>
+                                        <span class="text-black w-2/3">200gr</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5 items-center mb-10">
+                                    <div class="flex-col items-center">
+                                        <p class="font-semibold text-xs my-1 text-third"><s>Rp 28.000</s></p>
+                                        <p class="font-semibold text-xs my-1 text-secondary">Rp 25.200</p>
+                                        <p class="text-base text-medium text-secondary">-10%</p>
+                                    </div>
+                                    <div class="flex gap-5 items-center">
+                                        <div class="flex items-center h-fit">
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                            </svg>
+                                            <p class="text-center border-b border-black text-[29px] w-20">1
+                                            </p>
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <p class="font-semibold text-xs">Rp 25.200</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="h-[22px] w-[22px] fill-current text-third" viewBox="0 0 32 32">
+                                            <path class="cls-1"
+                                                d="M24,31H8a3,3,0,0,1-3-3V9A1,1,0,0,1,7,9V28a1,1,0,0,0,1,1H24a1,1,0,0,0,1-1V9a1,1,0,0,1,2,0V28A3,3,0,0,1,24,31Z">
+                                            </path>
+                                            <path class="cls-1" d="M28,7H4A1,1,0,0,1,4,5H28a1,1,0,0,1,0,2Z"></path>
+                                            <path class="cls-1"
+                                                d="M20,7a1,1,0,0,1-1-1V3H13V6a1,1,0,0,1-2,0V2a1,1,0,0,1,1-1h8a1,1,0,0,1,1,1V6A1,1,0,0,1,20,7Z">
+                                            </path>
+                                            <path class="cls-1"
+                                                d="M16,26a1,1,0,0,1-1-1V11a1,1,0,0,1,2,0V25A1,1,0,0,1,16,26Z"></path>
+                                            <path class="cls-1"
+                                                d="M21,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,21,24Z"></path>
+                                            <path class="cls-1"
+                                                d="M11,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,11,24Z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-col ml-12">
+                            <div class="flex w-full justify-center items-center gap-5 text-forth bg-secondary">
+                                <p>Pilih Pengiriman</p>
+                                <svg class="h-5 fill-current" viewBox="0 0 96 96">
+                                    <path
+                                        d="M81.8457,25.3876a6.0239,6.0239,0,0,0-8.45.7676L48,56.6257l-25.396-30.47a5.999,5.999,0,1,0-9.2114,7.6879L43.3943,69.8452a5.9969,5.9969,0,0,0,9.2114,0L82.6074,33.8431A6.0076,6.0076,0,0,0,81.8457,25.3876Z" />
+                                </svg>
+                            </div>
+                            <div class="flex justify-evenly">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?sing">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?walk">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?run">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?talk">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?candy">
+                            </div>
+                            <div class="flex justify-evenly">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?movie">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?hear">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?pen">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?pencil">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?air">
+                            </div>
+                            <div class="border-t flex py-2 justify-evenly border-b-4 text-sm text-third">
+                                <div class="flex items-center gap-5">
+                                    <p>Regular Rp 10.000</p>
+                                    <input type="checkbox" class="rounded-full h-3 w-3">
+                                </div>
+                                <div class="flex items-center gap-5">
+                                    <p>Oke Rp 20.000</p>
+                                    <input type="checkbox" class="rounded-full h-3 w-3">
+                                </div>
+                                <div class="flex items-center gap-5">
+                                    <p>Yes Rp 30.000</p>
+                                    <input type="checkbox" class="rounded-full h-3 w-3">
+                                </div>
+                            </div>
+                            <div class="flex py-2 justify-between border-b-8 text-sm text-third">
+                                <p>Subtotal</p>
+                                <p class="text-first font-bold">Rp 60.400</p>
+                            </div>
+                        </div>
+                        <!-- 1 Product End -->
+                        <div class="flex items-center gap-5">
+                            <img class="h-10 my-5" src="https://source.unsplash.com/1000x600?tissue">
+                            <svg class="h-5 fill-current text-first" viewBox="0 0 96 96">
+                                <path
+                                    d="M81.8457,25.3876a6.0239,6.0239,0,0,0-8.45.7676L48,56.6257l-25.396-30.47a5.999,5.999,0,1,0-9.2114,7.6879L43.3943,69.8452a5.9969,5.9969,0,0,0,9.2114,0L82.6074,33.8431A6.0076,6.0076,0,0,0,81.8457,25.3876Z" />
+                            </svg>
+                            <p class="text-third">Jakarta</p>
+                        </div>
+                        <!-- 2 Product Start -->
+                        <div class="flex items-center gap-5 mb-5">
+                            <input type="checkbox" class="h-8 w-8 rounded-lg checked:bg-blue-500">
+                            <div class="w-full h-[140px] justify-between p-5 border flex gap-5 rounded-sm">
+                                <img class="h-full w-20" src="https://source.unsplash.com/1000x600?nuke">
+                                <div class="flex-col">
+                                    <p class="font-semibold text-sm">MUKKA</p>
+                                    <p class="text-sm">MUKKA LIP CREAM MATEE</p>
+                                    <div class="flex items-center">
+                                        <p class="text-xs text-third text-medium w-1/3">Variant</p>
+                                        <span class="text-black w-2/3 text-sm">YELLOW</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <p class="text-sm text-third text-medium w-1/3">Berat</p>
+                                        <span class="text-black w-2/3">200gr</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5 items-center mb-10">
+                                    <div class="flex-col items-center">
+                                        <p class="font-semibold text-xs my-1 text-third"><s>Rp 28.000</s></p>
+                                        <p class="font-semibold text-xs my-1 text-secondary">Rp 25.200</p>
+                                        <p class="text-base text-medium text-secondary">-10%</p>
+                                    </div>
+                                    <div class="flex gap-5 items-center">
+                                        <div class="flex items-center h-fit">
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                            </svg>
+                                            <p class="text-center border-b border-black text-[29px] w-20">1
+                                            </p>
+                                            <svg class="h-3 fill-current text-secondary"
+                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <p class="font-semibold text-xs">Rp 25.200</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="h-[22px] w-[22px] fill-current text-third" viewBox="0 0 32 32">
+                                            <path class="cls-1"
+                                                d="M24,31H8a3,3,0,0,1-3-3V9A1,1,0,0,1,7,9V28a1,1,0,0,0,1,1H24a1,1,0,0,0,1-1V9a1,1,0,0,1,2,0V28A3,3,0,0,1,24,31Z">
+                                            </path>
+                                            <path class="cls-1" d="M28,7H4A1,1,0,0,1,4,5H28a1,1,0,0,1,0,2Z"></path>
+                                            <path class="cls-1"
+                                                d="M20,7a1,1,0,0,1-1-1V3H13V6a1,1,0,0,1-2,0V2a1,1,0,0,1,1-1h8a1,1,0,0,1,1,1V6A1,1,0,0,1,20,7Z">
+                                            </path>
+                                            <path class="cls-1"
+                                                d="M16,26a1,1,0,0,1-1-1V11a1,1,0,0,1,2,0V25A1,1,0,0,1,16,26Z"></path>
+                                            <path class="cls-1"
+                                                d="M21,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,21,24Z"></path>
+                                            <path class="cls-1"
+                                                d="M11,24a1,1,0,0,1-1-1V13a1,1,0,0,1,2,0V23A1,1,0,0,1,11,24Z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-col ml-12">
+                            <div class="flex w-full justify-center items-center gap-5 text-forth bg-secondary">
+                                <p>Pilih Pengiriman</p>
+                                <svg class="h-5 fill-current" viewBox="0 0 96 96">
+                                    <path
+                                        d="M81.8457,25.3876a6.0239,6.0239,0,0,0-8.45.7676L48,56.6257l-25.396-30.47a5.999,5.999,0,1,0-9.2114,7.6879L43.3943,69.8452a5.9969,5.9969,0,0,0,9.2114,0L82.6074,33.8431A6.0076,6.0076,0,0,0,81.8457,25.3876Z" />
+                                </svg>
+                            </div>
+                            <div class="flex justify-evenly">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?sing">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?walk">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?run">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?talk">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?candy">
+                            </div>
+                            <div class="flex justify-evenly">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?movie">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?hear">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?pen">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?pencil">
+                                <img class="w-[95px] my-5" src="https://source.unsplash.com/1000x600?air">
+                            </div>
+                            <div class="border-t flex py-2 justify-evenly border-b-4 text-sm text-third">
+                                <div class="flex items-center gap-5">
+                                    <p>Regular Rp 10.000</p>
+                                    <input type="checkbox" class="rounded-full h-3 w-3">
+                                </div>
+                                <div class="flex items-center gap-5">
+                                    <p>Oke Rp 20.000</p>
+                                    <input type="checkbox" class="rounded-full h-3 w-3">
+                                </div>
+                                <div class="flex items-center gap-5">
+                                    <p>Yes Rp 30.000</p>
+                                    <input type="checkbox" class="rounded-full h-3 w-3">
+                                </div>
+                            </div>
+                            <div class="flex py-2 justify-between border-b-8 text-sm text-third">
+                                <p>Subtotal</p>
+                                <p class="text-first font-bold">Rp 45.200</p>
+                            </div>
+                        </div>
+                        <!-- 2 Product Start -->
+                    </div>
+                    <div class="w-1/3">
+                        <div class="border rounded-md w-full h-fit">
+                            <div class="flex-col">
+                                <div class="px-3 pt-5">
+                                    <div class="flex w-full justify-between my-2">
+                                        <div class="flex text-xs gap-1">
+                                            <p class="font-bold">Alamat Pengiriman</p>
+                                            <p class="text-third">User (Kantor)</p>
+                                            <p class="bg-first rounded-full px-2">Utama</p>
+                                        </div>
+                                        <p class="text-sm text-secondary font-medium">Pilih Alamat</p>
+                                    </div>
+                                    <div class="w-[348px] h-20 mb-2 border cursor-pointer border-first">
+                                        <p class="text-xs p-2 h-full text-third">
+                                            Jl. Samanhudi No.17, RT.1/RW.7, Ps. Baru, Kecamatan Sawah Besar, Kota
+                                            Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10710</p>
+                                    </div>
+                                    <!-- Dorpdown Start -->
+                                    <button
+                                        class="w-full px-5 border rounded-md flex items-center justify-between mb-2"
+                                        x-on:click="dropdown = true">
+                                        <p class="font-medium text-first text-lg py-2">Pakai Voucher Promo</p>
+                                        <svg class="h-5 fill-current text-first" viewBox="0 0 96 96">
+                                            <path
+                                                d="M81.8457,25.3876a6.0239,6.0239,0,0,0-8.45.7676L48,56.6257l-25.396-30.47a5.999,5.999,0,1,0-9.2114,7.6879L43.3943,69.8452a5.9969,5.9969,0,0,0,9.2114,0L82.6074,33.8431A6.0076,6.0076,0,0,0,81.8457,25.3876Z" />
+                                        </svg>
+                                    </button>
+                                    <!-- Dropdown Menu Start -->
+                                    <!-- <div class="border rounded-b-md text-third text-sm px-5 py-1 z-10 bg-white shadow-md"
+                                    x-show="dropdown" @click.outside="dropdown = false">
+                                    <div class=" flex justify-between items-center cursor-pointer mb-2">
+                                        <p>Jakarta (1k)</p>
+                                        <input type="checkbox" class="rounded-full" />
+                                    </div>
+                                    <div class=" flex justify-between items-center cursor-pointer mb-2">
+                                        <p>Bandung (2)</p>
+                                        <input type="checkbox" class="rounded-full" />
+                                    </div>
+                                    <div class=" flex justify-between items-center cursor-pointer mb-2">
+                                        <p>Surabaya (1307)</p>
+                                        <input type="checkbox" class="rounded-full" />
+                                    </div>
+                                    <div class=" flex justify-between items-center cursor-pointer mb-2">
+                                        <p>Bali (15)</p>
+                                        <input type="checkbox" class="rounded-full" />
+                                    </div>
+                                    <div class=" flex justify-between items-center cursor-pointer mb-2">
+                                        <p>Makassar (570)</p>
+                                        <input type="checkbox" class="rounded-full" />
+                                    </div>
+                                </div> -->
+                                    <!-- Dropdown Menu End -->
+                                    <!-- Dropdown End -->
+                                    <div class="w-full h-20 mb-2 border cursor-pointer border-black">
+                                        <p class="text-xl h-full flex items-center justify-center text-secondary">
+                                            VOUCHER FREE ONGKIR</p>
+                                    </div>
+                                    <h1 class="font-bold text-xl my-2">Pembelanjaan</h1>
+                                    <div class="flex justify-between mb-2">
+                                        <p>Total Harga</p>
+                                        <p>Rp 105.600</p>
+                                    </div>
+                                    <div class="flex justify-between mb-2">
+                                        <p>Diskon</p>
+                                        <p>Rp 0</p>
+                                    </div>
+                                    <div class="flex justify-between mb-2">
+                                        <p>CashBack</p>
+                                        <p>Rp 5.000</p>
+                                    </div>
+                                </div>
+                                <div class="border-b-8 w-full"></div>
+                                <!-- Belanja Start -->
+                                <div class="p-5">
+                                    <div class="flex font-bold justify-between mb-2">
+                                        <p>Total Tagihan</p>
+                                        <p>Rp 100.600</p>
+                                    </div>
+                                    <button
+                                        class="bg-secondary show-modal3 py-1 font-medium w-full rounded-md text-white mt-2">Pilih
+                                        Pembayaran</button>
+                                </div>
+                                <!-- Pop Up Start -->
+                                <div class="dm-modal3 dm-modal-hide bg-black bg-opacity-60 top-0 h-screen fixed z-10 justify-center items-center"
+                                    data-trigger="show-modal3">
+                                    <div class="rounded h-full items-center flex justify-center">
+                                        <div
+                                            class="bg-white relative opacity-100 rounded py-10 px-5 text-center w-[600px]">
+                                            <img class="h-[300px] w-full my-5" src="https://source.unsplash.com/1000x600?sing">
+                                            <div class="mt-2 absolute w-full text-right top-0 left-0">
+                                                <button type="button" class="dm-close-modal">
+                                                    <svg class="w-10 fill-current text-forth" viewBox="0 0 24 24"
+                                                        width="24">
+                                                        <path d="M6 18L18 6M6 6L18 18" stroke="#94a3b8"
+                                                            stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" /></svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pop Up End -->
+                                <!-- Belanja End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 3 End -->
+    <!-- Javascript Start -->
     <script src="/dist/js/script.js"></script>
     <script src="http://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
     <script>
         jQuery.noConflict();
         jQuery(document).ready(function ($) {
-            /* Signup Pop Form */
-            if ($(".dm-modal")[0]) {
-                var dm_trigger_class = "." + $('.dm-modal').data("trigger");
+            /* Pop Up Start */
+            if ($(".dm-modal1")[0]) {
+                var dm_trigger_class = "." + $('.dm-modal1').data("trigger");
                 $(dm_trigger_class).click(function (e) {
                     e.preventDefault();
-                    $('.dm-modal').appendTo('body');
-                    $('.dm-modal').removeClass("dm-modal-hide").addClass("dm-visible");
+                    $('.dm-modal1').appendTo('body');
+                    $('.dm-modal1').removeClass("dm-modal-hide").addClass("dm-visible");
                     $('body').addClass("disable-scroll");
                 });
                 $('.dm-close-modal').click(function (e) {
                     e.preventDefault();
-                    $('.dm-modal').addClass("dm-modal-hide").removeClass("dm-visible");
+                    $('.dm-modal1').addClass("dm-modal-hide").removeClass("dm-visible");
                     $('body').removeClass("disable-scroll");
                 });
                 $('.dm-modal-mask').click(function (e) {
                     e.preventDefault();
-                    $('.dm-modal').addClass("dm-modal-hide").removeClass("dm-visible");;
+                    $('.dm-modal1').addClass("dm-modal-hide").removeClass("dm-visible");;
                     $('body').removeClass("disable-scroll");
                 });
                 $(document).on("keyup", function (e) {
                     if (e.key === "Escape") {
-                        $('.dm-modal').addClass("dm-modal-hide").removeClass("dm-visible");;
+                        $('.dm-modal1').addClass("dm-modal-hide").removeClass("dm-visible");;
+                        $('body').removeClass("disable-scroll");
+                    }
+                });
+            }
+        });
+        jQuery.noConflict();
+        jQuery(document).ready(function ($) {
+            /* Pop Up Start */
+            if ($(".dm-modal2")[0]) {
+                var dm_trigger_class = "." + $('.dm-modal2').data("trigger");
+                $(dm_trigger_class).click(function (e) {
+                    e.preventDefault();
+                    $('.dm-modal2').appendTo('body');
+                    $('.dm-modal2').removeClass("dm-modal-hide").addClass("dm-visible");
+                    $('body').addClass("disable-scroll");
+                });
+                $('.dm-close-modal').click(function (e) {
+                    e.preventDefault();
+                    $('.dm-modal2').addClass("dm-modal-hide").removeClass("dm-visible");
+                    $('body').removeClass("disable-scroll");
+                });
+                $('.dm-modal-mask').click(function (e) {
+                    e.preventDefault();
+                    $('.dm-modal2').addClass("dm-modal-hide").removeClass("dm-visible");;
+                    $('body').removeClass("disable-scroll");
+                });
+                $(document).on("keyup", function (e) {
+                    if (e.key === "Escape") {
+                        $('.dm-modal2').addClass("dm-modal-hide").removeClass("dm-visible");;
+                        $('body').removeClass("disable-scroll");
+                    }
+                });
+            }
+        });
+        jQuery.noConflict();
+        jQuery(document).ready(function ($) {
+            /* Pop Up Start */
+            if ($(".dm-modal3")[0]) {
+                var dm_trigger_class = "." + $('.dm-modal3').data("trigger");
+                $(dm_trigger_class).click(function (e) {
+                    e.preventDefault();
+                    $('.dm-modal3').appendTo('body');
+                    $('.dm-modal3').removeClass("dm-modal-hide").addClass("dm-visible");
+                    $('body').addClass("disable-scroll");
+                });
+                $('.dm-close-modal').click(function (e) {
+                    e.preventDefault();
+                    $('.dm-modal3').addClass("dm-modal-hide").removeClass("dm-visible");
+                    $('body').removeClass("disable-scroll");
+                });
+                $('.dm-modal-mask').click(function (e) {
+                    e.preventDefault();
+                    $('.dm-modal3').addClass("dm-modal-hide").removeClass("dm-visible");;
+                    $('body').removeClass("disable-scroll");
+                });
+                $(document).on("keyup", function (e) {
+                    if (e.key === "Escape") {
+                        $('.dm-modal3').addClass("dm-modal-hide").removeClass("dm-visible");;
                         $('body').removeClass("disable-scroll");
                     }
                 });
             }
         });
     </script>
+    <!-- Javascript End -->
 </body>
 
 </html>
