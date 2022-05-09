@@ -650,6 +650,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -708,6 +718,42 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-12 {
   margin-left: 3rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mb-52 {
+  margin-bottom: 13rem;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mt-36 {
+  margin-top: 9rem;
+}
+
+.mt-28 {
+  margin-top: 7rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.mt-14 {
+  margin-top: 3.5rem;
 }
 
 .block {
@@ -810,6 +856,58 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-\[402px\] {
   height: 402px;
+}
+
+.h-\[285px\] {
+  height: 285px;
+}
+
+.h-\[180px\] {
+  height: 180px;
+}
+
+.h-\[25px\] {
+  height: 25px;
+}
+
+.h-\[17px\] {
+  height: 17px;
+}
+
+.h-\[5px\] {
+  height: 5px;
+}
+
+.h-\[27px\] {
+  height: 27px;
+}
+
+.h-\[600px\] {
+  height: 600px;
+}
+
+.h-11 {
+  height: 2.75rem;
+}
+
+.h-\[130px\] {
+  height: 130px;
+}
+
+.h-\[45px\] {
+  height: 45px;
+}
+
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-\[34px\] {
+  height: 34px;
+}
+
+.h-9 {
+  height: 2.25rem;
 }
 
 .w-full {
@@ -918,6 +1016,72 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[230px\] {
   width: 230px;
+}
+
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-36 {
+  width: 9rem;
+}
+
+.w-\[402px\] {
+  width: 402px;
+}
+
+.w-44 {
+  width: 11rem;
+}
+
+.w-\[150px\] {
+  width: 150px;
+}
+
+.w-\[180px\] {
+  width: 180px;
+}
+
+.w-\[285px\] {
+  width: 285px;
+}
+
+.w-\[full\] {
+  width: full;
+}
+
+.w-\[255px\] {
+  width: 255px;
+}
+
+.w-\[170px\] {
+  width: 170px;
+}
+
+.w-\[17px\] {
+  width: 17px;
+}
+
+.w-\[120px\] {
+  width: 120px;
+}
+
+.w-\[130px\] {
+  width: 130px;
+}
+
+.w-\[200px\] {
+  width: 200px;
+}
+
+.w-\[34px\] {
+  width: 34px;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .transform {
@@ -1325,6 +1489,27 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 }
 
+.text-\[34px\] {
+  font-size: 34px;
+}
+
+.text-\[15px\] {
+  font-size: 15px;
+}
+
+.text-\[20px\] {
+  font-size: 20px;
+}
+
+.text-\[29px\] {
+  font-size: 29px;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -1427,4 +1612,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .checked\:bg-blue-500:checked {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.checked\:bg-secondary:checked {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 128 107 / var(--tw-bg-opacity));
 }
