@@ -910,6 +910,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.25rem;
 }
 
+.h-\[30px\] {
+  height: 30px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1082,6 +1086,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-9 {
   width: 2.25rem;
+}
+
+.w-\[45px\] {
+  width: 45px;
+}
+
+.w-\[95px\] {
+  width: 95px;
+}
+
+.w-\[348px\] {
+  width: 348px;
+}
+
+.max-w-\[95px\] {
+  max-width: 95px;
 }
 
 .transform {
@@ -1410,6 +1430,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0.5rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -1508,6 +1538,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-\[18px\] {
+  font-size: 18px;
 }
 
 .font-medium {
