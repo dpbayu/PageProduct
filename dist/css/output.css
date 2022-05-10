@@ -678,8 +678,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
-.mt-14 {
-  margin-top: 3.5rem;
+.mt-\[75px\] {
+  margin-top: 75px;
 }
 
 .ml-2 {
@@ -688,10 +688,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-3 {
   margin-top: 0.75rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .mb-32 {
@@ -768,10 +764,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-\[600px\] {
   height: 600px;
 }
@@ -822,6 +814,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-\[22px\] {
   height: 22px;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-\[30px\] {
@@ -1199,11 +1195,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(136 19 55 / var(--tw-bg-opacity));
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
 .bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
@@ -1217,6 +1208,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-forth {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-neutral-800 {
@@ -1278,11 +1274,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 2.5rem;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1291,6 +1282,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .pt-2 {
@@ -1353,16 +1349,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 10px;
 }
 
-.text-\[34px\] {
-  font-size: 34px;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-\[25px\] {
   font-size: 25px;
-}
-
-.text-\[15px\] {
-  font-size: 15px;
 }
 
 .text-\[20px\] {
@@ -1461,6 +1454,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline {
+  outline-style: solid;
 }
 
 .transition {

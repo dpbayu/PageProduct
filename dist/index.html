@@ -10,54 +10,56 @@
     <title>Product Page</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         .disable-scroll {
             overflow: hidden;
         }
 
-        .dm-modal1 {
-            width: 100%;
-            width: 100vw;
-            height: 100vh;
-            box-sizing: border-box;
-            top: 0;
-            left: 0;
-            right: 0;
-            position: fixed;
-            z-index: 2347483657 !important;
-            /* transition: 1s ease all; */
+        .btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
         }
 
-        .dm-modal2 {
-            width: 100%;
-            width: 100vw;
-            height: 100vh;
-            box-sizing: border-box;
-            top: 0;
-            left: 0;
-            right: 0;
-            position: fixed;
-            z-index: 2347483657 !important;
-            /* transition: 1s ease all; */
+        .btn:active {
+            transform: scale(0.9);
         }
 
-        .dm-modal3 {
-            width: 100%;
-            width: 100vw;
-            height: 100vh;
-            box-sizing: border-box;
-            top: 0;
-            left: 0;
-            right: 0;
-            position: fixed;
-            z-index: 2347483657 !important;
-            /* transition: 1s ease all; */
+        .close-modal {
+            background: none;
+            border: none;
         }
 
-        .dm-modal-hide {
-            opacity: 0;
-            user-select: none;
-            top: -200%;
-            /* transition: 1s ease all; */
+        .modal {
+            position: fixed;
+            top: -50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: top 0.3s ease-in-out;
+        }
+
+        .modal.active {
+            top: 50%;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        #overlay.active {
+            display: block;
         }
     </style>
 </head>
@@ -69,6 +71,7 @@
     dropdown: false,
     }">
     <header>
+        <div id="overlay"></div>
         <div class="bg-secondary w-full h-5"></div>
         <div class="bg-first text-white text-xs py-3 text-center font-medium" @click.prevent="tab = 'tab1'">GRATIS
             ONGKIR MIN. BELANJA Rp 60.000</div>
@@ -356,42 +359,37 @@
                             <!-- Button Start -->
                             <!-- Add To Bag Start -->
                             <button type="button"
-                                class="show-modal1 text-center px-5 py-1 col-span-3 col-start-1 border border-secondary rounded-md text-secondary">ADD
+                                class="text-center px-5 py-1 col-span-3 col-start-1 border border-secondary rounded-md text-secondary"
+                                data-target="#modal1">ADD
                                 TO BAG
                             </button>
                             <!-- Pop Up Start -->
-                            <div class="dm-modal1 dm-modal-hide bg-black bg-opacity-60 top-0 h-screen fixed z-10 justify-center items-center"
-                                data-trigger="show-modal1">
-                                <div class="rounded flex items-center h-full justify-center">
-                                    <div class="bg-white relative flex-col justify-center opacity-100 rounded p-10 w-[600px] h-[600px] text-center">
-                                        <svg class="h-[130px] fill-current text-secondary flex w-full mb-5"
-                                            style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24">
-                                            <path class="st0"
-                                                d="M20.9,6H17V5c0-2.8-2.2-5-5-5S7,2.2,7,5v5h2V8h4V6H9V5c0-1.7,1.3-3,3-3c1.7,0,3,1.3,3,3v5h2V8h2.1l0.9,14H4.1  L4.9,8H5V6H3.1L1.9,24h20.1L20.9,6z" />
-                                        </svg>
-                                        <h2 class="text-[34px] mb-3">SUDAH DITAMBAHKAN KE CHART KAMU</h2>
-                                        <div class="border-b-2 my-5"></div>
-                                        <div class="flex gap-5">
-                                            <img class="w-[200px] h-[200px]" src="https://source.unsplash.com/1000x600?beach">
-                                            <div class="w-2/3 text-left">
-                                                <p class="font-medium text-[25px]">MUKKA</p>
-                                                <p class="text-[25px]">MUKKA LIP CREAM MATEE</p>
-                                                <p class="text-[15px] font-light">ORANGE</p>
-                                                <button
-                                                    class="w-[200px] h-[45px] text-[20px] bg-secondary rounded-md mt-14 text-white">VIEW
-                                                    CHART</button>
-                                            </div>
-                                        </div>
-                                        <div class="mt-2 absolute top-0 right-5">
-                                            <button type="button" class="dm-close-modal">
-                                                <svg class="w-10 fill-current text-forth" viewBox="0 0 24 24"
-                                                    width="24">
-                                                    <path d="M6 18L18 6M6 6L18 18" stroke="#94a3b8"
-                                                        stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" /></svg>
-                                            </button>
-                                        </div>
+                            <div class="bg-white relative flex-col justify-center opacity-100 rounded z-10 p-10 w-[600px] h-[600px] text-center modal"
+                                id="modal1">
+                                <svg class="h-[130px] fill-current text-secondary flex w-full mb-5"
+                                    style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24">
+                                    <path class="st0"
+                                        d="M20.9,6H17V5c0-2.8-2.2-5-5-5S7,2.2,7,5v5h2V8h4V6H9V5c0-1.7,1.3-3,3-3c1.7,0,3,1.3,3,3v5h2V8h2.1l0.9,14H4.1  L4.9,8H5V6H3.1L1.9,24h20.1L20.9,6z" />
+                                </svg>
+                                <h2 class="text-4xl h-fit mb-3">SUDAH DITAMBAHKAN KE CHART KAMU</h2>
+                                <div class="border-b-2 my-5"></div>
+                                <div class="flex gap-5">
+                                    <img class="w-[200px] h-[200px]" src="https://source.unsplash.com/1000x600?beach">
+                                    <div class="w-2/3 text-left">
+                                        <p class="font-medium text-[25px] mb-2">MUKKA</p>
+                                        <p class="text-[25px] mb-2">MUKKA LIP CREAM MATEE</p>
+                                        <p class="text-sm font-light">ORANGE</p>
+                                        <button
+                                            class="w-[200px] h-[45px] text-[20px] bg-secondary rounded-md mt-[75px] text-white">VIEW
+                                            CHART</button>
                                     </div>
+                                </div>
+                                <div class="mt-2 absolute top-0 right-5">
+                                    <button type="button" class="close-modal">
+                                        <svg class="w-10 fill-current text-forth" viewBox="0 0 24 24" width="24">
+                                            <path d="M6 18L18 6M6 6L18 18" stroke="#94a3b8" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" /></svg>
+                                    </button>
                                 </div>
                             </div>
                             <!-- Pop Up End -->
@@ -506,7 +504,7 @@
                     <!-- Produk 2 Start -->
                     <div class="flex-col w-[180px] h-fit relative">
                         <button
-                        class="absolute bg-first top-0 left-0 text-white rounded-full w-[25px] h-[25px] text-2xs">30%</button>
+                            class="absolute bg-first top-0 left-0 text-white rounded-full w-[25px] h-[25px] text-2xs">30%</button>
                         <svg class="absolute top-0 right-0 col-start-9 h-8 fill-current items-center text-third"
                             style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
                             <g>
@@ -551,7 +549,7 @@
                     <!-- Produk 3 Start -->
                     <div class="flex-col w-[180px] h-fit relative">
                         <button
-                        class="absolute bg-first top-0 left-0 text-white rounded-full w-[25px] h-[25px] text-2xs">30%</button>
+                            class="absolute bg-first top-0 left-0 text-white rounded-full w-[25px] h-[25px] text-2xs">30%</button>
                         <svg class="absolute top-0 right-0 col-start-9 h-8 fill-current items-center text-third"
                             style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
                             <g>
@@ -596,7 +594,7 @@
                     <!-- Produk 4 Start -->
                     <div class="flex-col w-[180px] h-fit relative">
                         <button
-                        class="absolute bg-first top-0 left-0 text-white rounded-full w-[25px] h-[25px] text-2xs">30%</button>
+                            class="absolute bg-first top-0 left-0 text-white rounded-full w-[25px] h-[25px] text-2xs">30%</button>
                         <svg class="absolute top-0 right-0 col-start-9 h-8 fill-current items-center text-third"
                             style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
                             <g>
@@ -1084,50 +1082,40 @@
                                     <p>Rp 0</p>
                                 </div>
                                 <!-- Belanja Start -->
-                                <button
-                                    class="bg-secondary show-modal2 py-1 font-medium w-full rounded-md text-white my-2">Belanja
+                                <button class="bg-secondary py-1 font-medium w-full rounded-md text-white my-2"
+                                    data-target="#modal2">Belanja
                                     (2)</button>
                                 <!-- Pop Up Start -->
-                                <div class="dm-modal2 dm-modal-hide bg-black bg-opacity-60 top-0 h-screen fixed z-10 justify-center items-center"
-                                    data-trigger="show-modal2">
-                                    <div class="rounded h-full items-center flex justify-center">
-                                        <div
-                                            class="bg-white relative opacity-100 rounded py-10 px-5 text-center w-[600px] h-[600px]">
-                                            <div class="flex my-5 gap-5">
-                                                <input
-                                                    class="placeholder:placeholder:text-slate-400 w-[325px] text-xs block bg-white border h-7 border-slate-300 rounded-sm"
-                                                    placeholder="Masukkan kode voucher kamu disini ya ...."
-                                                    type="text" />
-                                                <p class="w-[230px] h-[30px] text-[18px] bg-neutral-800 text-first font-medium">Gunakan</p>
-                                            </div>
-                                            <h2 class="text-first font-bold text-left mb-5">Voucher Saya</h2>
-                                            <div class="w-full h-[108px] mb-5 border cursor-pointer border-black">
-                                                <p
-                                                    class="text-3xl h-full flex items-center justify-center text-secondary">
-                                                    VOUCHER FREE ONGKIR</p>
-                                            </div>
-                                            <div class="w-full h-[108px] mb-5 border cursor-pointer border-black">
-                                                <p
-                                                    class="text-3xl h-full flex items-center justify-center text-secondary dm-close-modal" @click.prevent="tab = 'tab3'">
-                                                    VOUCHER CASHBACK</p>
-                                            </div>
-                                            <div class="w-full h-[108px] mb-5 border cursor-pointer border-black">
-                                                <p
-                                                    class="text-3xl h-full flex items-center justify-center text-secondary">
-                                                    VOUCHER DISKON 78%</p>
-                                            </div>
-                                            <div
-                                                class="mt-2 absolute w-full flex justify-between items-end left-0 top-0">
-                                                <h1 class="text-first px-5 font-base">Pakai Voucher Promo</h1>
-                                                <button type="button" class="dm-close-modal">
-                                                    <svg class="w-10 fill-current text-forth" viewBox="0 0 24 24"
-                                                        width="24">
-                                                        <path d="M6 18L18 6M6 6L18 18" stroke="#94a3b8"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" /></svg>
-                                                </button>
-                                            </div>
-                                        </div>
+                                <div class="bg-white relative flex-col justify-center opacity-100 rounded z-10 p-10 w-[600px] h-[600px] text-center modal"
+                                    id="modal2">
+                                    <div class="flex my-5 gap-5">
+                                        <input
+                                            class="placeholder:placeholder:text-slate-400 w-[325px] text-xs block bg-white border h-7 border-slate-300 rounded-sm"
+                                            placeholder="Masukkan kode voucher kamu disini ya ...." type="text" />
+                                        <p class="w-[230px] h-[30px] text-[18px] bg-neutral-800 text-first font-medium">
+                                            Gunakan</p>
+                                    </div>
+                                    <h2 class="text-first font-bold text-left mb-5">Voucher Saya</h2>
+                                    <div class="w-full h-[108px] mb-5 border cursor-pointer border-black">
+                                        <p class="text-3xl h-full flex items-center justify-center text-secondary">
+                                            VOUCHER FREE ONGKIR</p>
+                                    </div>
+                                    <div class="w-full h-[108px] mb-5 border cursor-pointer border-black">
+                                        <p class="text-3xl h-full flex items-center justify-center text-secondary close-modal"
+                                            @click.prevent="tab = 'tab3'">
+                                            VOUCHER CASHBACK</p>
+                                    </div>
+                                    <div class="w-full h-[108px] mb-5 border cursor-pointer border-black">
+                                        <p class="text-3xl h-full flex items-center justify-center text-secondary">
+                                            VOUCHER DISKON 78%</p>
+                                    </div>
+                                    <div class="mt-2 absolute w-full flex justify-between items-end left-0 top-0">
+                                        <h1 class="text-first px-5 font-base">Pakai Voucher Promo</h1>
+                                        <button type="button" class="close-modal">
+                                            <svg class="w-10 fill-current text-forth" viewBox="0 0 24 24" width="24">
+                                                <path d="M6 18L18 6M6 6L18 18" stroke="#94a3b8" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" /></svg>
+                                        </button>
                                     </div>
                                 </div>
                                 <!-- Pop Up End -->
@@ -1390,8 +1378,7 @@
                                             Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10710</p>
                                     </div>
                                     <!-- Dorpdown Start -->
-                                    <button
-                                        class="w-full px-5 border rounded-md flex items-center justify-between mb-2"
+                                    <button class="w-full px-5 border rounded-md flex items-center justify-between mb-2"
                                         x-on:click="dropdown = true">
                                         <p class="font-medium text-first text-lg py-2">Pakai Voucher Promo</p>
                                         <svg class="h-5 fill-current text-first" viewBox="0 0 96 96">
@@ -1450,27 +1437,20 @@
                                         <p>Total Tagihan</p>
                                         <p>Rp 100.600</p>
                                     </div>
-                                    <button
-                                        class="bg-secondary show-modal3 py-1 font-medium w-full rounded-md text-white mt-2">Pilih
+                                    <button class="bg-secondary py-1 font-medium w-full rounded-md text-white mt-2"
+                                        data-target="#modal3">Pilih
                                         Pembayaran</button>
                                 </div>
                                 <!-- Pop Up Start -->
-                                <div class="dm-modal3 dm-modal-hide bg-black bg-opacity-60 top-0 h-screen fixed z-10 justify-center items-center"
-                                    data-trigger="show-modal3">
-                                    <div class="rounded h-full items-center flex justify-center">
-                                        <div
-                                            class="bg-white relative opacity-100 rounded py-10 px-5 text-center w-[600px]">
-                                            <img class="h-[300px] w-full my-5" src="https://source.unsplash.com/1000x600?sing">
-                                            <div class="mt-2 absolute w-full text-right top-0 left-0">
-                                                <button type="button" class="dm-close-modal">
-                                                    <svg class="w-10 fill-current text-forth" viewBox="0 0 24 24"
-                                                        width="24">
-                                                        <path d="M6 18L18 6M6 6L18 18" stroke="#94a3b8"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" /></svg>
-                                                </button>
-                                            </div>
-                                        </div>
+                                <div class="bg-white relative opacity-100 rounded z-10 py-10 px-5 text-center w-[600px] modal"
+                                    id="modal3">
+                                    <img class="h-[300px] w-full my-5" src="https://source.unsplash.com/1000x600?sing">
+                                    <div class="mt-2 absolute w-full text-right top-0 left-0">
+                                        <button type="button" class="close-modal">
+                                            <svg class="w-10 fill-current text-forth" viewBox="0 0 24 24" width="24">
+                                                <path d="M6 18L18 6M6 6L18 18" stroke="#94a3b8" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" /></svg>
+                                        </button>
                                     </div>
                                 </div>
                                 <!-- Pop Up End -->
@@ -1487,95 +1467,6 @@
     <script src="/dist/js/script.js"></script>
     <script src="http://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
-    <script>
-        jQuery.noConflict();
-        jQuery(document).ready(function ($) {
-            /* Pop Up Start */
-            if ($(".dm-modal1")[0]) {
-                var dm_trigger_class = "." + $('.dm-modal1').data("trigger");
-                $(dm_trigger_class).click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal1').appendTo('body');
-                    $('.dm-modal1').removeClass("dm-modal-hide").addClass("dm-visible");
-                    $('body').addClass("disable-scroll");
-                });
-                $('.dm-close-modal').click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal1').addClass("dm-modal-hide").removeClass("dm-visible");
-                    $('body').removeClass("disable-scroll");
-                });
-                $('.dm-modal-mask').click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal1').addClass("dm-modal-hide").removeClass("dm-visible");;
-                    $('body').removeClass("disable-scroll");
-                });
-                $(document).on("keyup", function (e) {
-                    if (e.key === "Escape") {
-                        $('.dm-modal1').addClass("dm-modal-hide").removeClass("dm-visible");;
-                        $('body').removeClass("disable-scroll");
-                    }
-                });
-            }
-        });
-        jQuery.noConflict();
-        jQuery(document).ready(function ($) {
-            /* Pop Up Start */
-            if ($(".dm-modal2")[0]) {
-                var dm_trigger_class = "." + $('.dm-modal2').data("trigger");
-                $(dm_trigger_class).click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal2').appendTo('body');
-                    $('.dm-modal2').removeClass("dm-modal-hide").addClass("dm-visible");
-                    $('body').addClass("disable-scroll");
-                });
-                $('.dm-close-modal').click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal2').addClass("dm-modal-hide").removeClass("dm-visible");
-                    $('body').removeClass("disable-scroll");
-                });
-                $('.dm-modal-mask').click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal2').addClass("dm-modal-hide").removeClass("dm-visible");;
-                    $('body').removeClass("disable-scroll");
-                });
-                $(document).on("keyup", function (e) {
-                    if (e.key === "Escape") {
-                        $('.dm-modal2').addClass("dm-modal-hide").removeClass("dm-visible");;
-                        $('body').removeClass("disable-scroll");
-                    }
-                });
-            }
-        });
-        jQuery.noConflict();
-        jQuery(document).ready(function ($) {
-            /* Pop Up Start */
-            if ($(".dm-modal3")[0]) {
-                var dm_trigger_class = "." + $('.dm-modal3').data("trigger");
-                $(dm_trigger_class).click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal3').appendTo('body');
-                    $('.dm-modal3').removeClass("dm-modal-hide").addClass("dm-visible");
-                    $('body').addClass("disable-scroll");
-                });
-                $('.dm-close-modal').click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal3').addClass("dm-modal-hide").removeClass("dm-visible");
-                    $('body').removeClass("disable-scroll");
-                });
-                $('.dm-modal-mask').click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal3').addClass("dm-modal-hide").removeClass("dm-visible");;
-                    $('body').removeClass("disable-scroll");
-                });
-                $(document).on("keyup", function (e) {
-                    if (e.key === "Escape") {
-                        $('.dm-modal3').addClass("dm-modal-hide").removeClass("dm-visible");;
-                        $('body').removeClass("disable-scroll");
-                    }
-                });
-            }
-        });
-    </script>
     <!-- Javascript End -->
 </body>
 
