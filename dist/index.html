@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/dist/css/output.css">
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css" />
     <title>Product Page</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <style>
@@ -206,8 +206,10 @@
                     <!-- Image Start -->
                     <div class="w-1/2 h-full flex-col">
                         <div class="relative">
-                            <img class="h-[402px] w-[402px] mx-auto" x-show="image === 'image1'" src="https://source.unsplash.com/1000x600?beach">
-                            <img class="h-[402px] w-[402px] mx-auto" x-show="image === 'image2'" src="https://source.unsplash.com/1000x600?plant">
+                            <img class="h-[402px] w-[402px] mx-auto" x-show="image === 'image1'"
+                                src="https://source.unsplash.com/1000x600?beach">
+                            <img class="h-[402px] w-[402px] mx-auto" x-show="image === 'image2'"
+                                src="https://source.unsplash.com/1000x600?plant">
                             <button
                                 class="absolute bg-first top-0 left-0 text-white rounded-full w-10 h-10">10%</button>
                         </div>
@@ -266,17 +268,21 @@
                         <!-- Row Quantity Start -->
                         <div class="grid grid-cols-12 mb-5 text-xs">
                             <p class="col-span-4 text-third">QUANTITY</p>
-                            <svg class="h-5 fill-current col-start-5 text-secondary"
-                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                <path
-                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
-                            </svg>
-                            <p class="col-start-6 col-span-2 text-center border-b border-black text-3xl -mt-5">1</p>
-                            <svg class="h-5 fill-current col-start-8 ml-auto text-secondary"
-                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                <path
-                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
-                            </svg>
+                            <button id="sub">
+                                <svg class="h-5 fill-current col-start-5 text-secondary"
+                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                    <path
+                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                </svg>
+                            </button>
+                            <input class="col-start-6 col-span-2 text-center border-b border-black text-3xl -mt-5" id="qtyBox" readonly="" value="1"></input>
+                            <button id="add">
+                                <svg class="h-5 fill-current col-start-8 ml-auto text-secondary"
+                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                    <path
+                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                </svg>
+                            </button>
                         </div>
                         <!-- Row Quantity End -->
                         <!-- Row Brand Start -->
