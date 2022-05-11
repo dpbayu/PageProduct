@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/dist/css/output.css">
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css"/>
     <title>Product Page</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <style>
@@ -62,6 +62,7 @@
 
 <body x-data="{
     tab: 'tab1',
+    image: 'image1',
     tabdescription:'description',
     modal: false,
     dropdown: false,
@@ -205,18 +206,23 @@
                     <!-- Image Start -->
                     <div class="w-1/2 h-full flex-col">
                         <div class="relative">
-                            <img class="h-[402px] w-[402px] mx-auto" src="https://source.unsplash.com/1000x600?beach">
+                            <img class="h-[402px] w-[402px] mx-auto" x-show="image === 'image1'" src="https://source.unsplash.com/1000x600?beach">
+                            <img class="h-[402px] w-[402px] mx-auto" x-show="image === 'image2'" src="https://source.unsplash.com/1000x600?plant">
                             <button
                                 class="absolute bg-first top-0 left-0 text-white rounded-full w-10 h-10">10%</button>
                         </div>
                         <div class="my-10 flex justify-evenly">
                             <div class="flex-col text-center">
-                                <img class="h-[86px] w-[86px]" src="https://source.unsplash.com/1000x600?kids">
-                                <p class="my-5 font-medium text-third">SHARE</p>
+                                <a href="#" :class="{image === 'image1'}" @click.prevent=" image= 'image1' ">
+                                    <img class="h-[86px] w-[86px]" src="https://source.unsplash.com/1000x600?beach">
+                                    <p class="my-5 font-medium text-third">SHARE</p>
+                                </a>
                             </div>
                             <div class="flex-col text-center">
-                                <img class="h-[86px] w-[86px]" src="https://source.unsplash.com/1000x600?plant">
-                                <p class="my-5 font-medium text-third">SHARE</p>
+                                <a href="#" :class="{'image === 'image2'}" @click.prevent=" image= 'image2'">
+                                    <img class="h-[86px] w-[86px]" src="https://source.unsplash.com/1000x600?plant">
+                                    <p class="my-5 font-medium text-third">SHARE</p>
+                                </a>
                             </div>
                         </div>
                     </div>
