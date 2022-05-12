@@ -57,16 +57,10 @@
         #overlay.active {
             display: block;
         }
-
-        .toggle {
-            fill: #e62e0e;
-            stroke: #e62e0e;
-        }
     </style>
 </head>
 
 <body x-data="{
-    open: false,
     tab: 'tab1',
     image: 'image1',
     tabdescription:'description',
@@ -274,22 +268,22 @@
                         <!-- Row Quantity Start -->
                         <div class="grid grid-cols-12 mb-5 text-xs">
                             <p class="col-span-4 text-third">QUANTITY</p>
-                            <button id="sub">
-                                <svg class="h-5 fill-current col-start-5 text-secondary"
+                            <div class="dec w-5 flex items-center justify-center cursor-pointer">
+                                <svg class="h-5 w-5 -z-10 fill-current col-start-5 text-secondary"
                                     style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
                                     <path
                                         d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
                                 </svg>
-                            </button>
+                            </div>
                             <input class="col-start-6 col-span-2 text-center border-b border-black text-3xl -mt-5"
-                                id="qtyBox" readonly="" value="1"></input>
-                            <button id="add">
-                                <svg class="h-5 fill-current col-start-8 ml-auto text-secondary"
+                                id="1" value="1">
+                            <div class="inc col-start-8 ml-auto w-5 flex items-center justify-center cursor-pointer">
+                                <svg class="h-5 w-5 -z-10 fill-current text-secondary"
                                     style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
                                     <path
                                         d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
                                 </svg>
-                            </button>
+                            </div>
                         </div>
                         <!-- Row Quantity End -->
                         <!-- Row Brand Start -->
@@ -415,16 +409,16 @@
                                 NOW
                             </button>
                             <!-- Buy Now End -->
-                            <div class="ml-10" x-on:click="open = !open">
-                                <div x-data="{like:false}"
-                                    x-on:click="like=!open">
-                                    <svg class="w-7 h-7 fill-current"
-                                        x-bind:class="{'toggle' : like}" viewBox="-1 0 28 28">
-                                        <path x-bind:class="{'toggle' : like}" stroke="black" fill="white"
-                                            d="M22.2,4.1c2.7,2.7,2.4,6.9-0.4,9.5l-8.4,7.9c-0.8,0.7-2.1,0.7-2.9,0l-8.4-7.9c-2.7-2.6-3-6.8-0.4-9.5   C4.6,1.4,9.2,1.3,12,4C14.8,1.3,19.4,1.4,22.2,4.1z" />
-                                    </svg>
-                                </div>
-                            </div>
+                            <svg class="col-start-9 h-8 fill-current items-center text-third"
+                                style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
+                                <g>
+                                    <g id="Icon-Heart" transform="translate(178.000000, 230.000000)">
+                                        <path class="st0"
+                                            d="M-146-177.1l-0.8-0.7c-18.2-14.8-23.1-20-23.1-28.5c0-7,5.7-12.6,12.6-12.6     c5.8,0,9.1,3.3,11.3,5.8c2.2-2.5,5.5-5.8,11.3-5.8c7,0,12.6,5.7,12.6,12.6c0,8.5-4.9,13.7-23.1,28.5L-146-177.1L-146-177.1z      M-157.3-216.3c-5.5,0-10,4.5-10,10c0,7.3,4.6,12.1,21.3,25.8c16.7-13.7,21.3-18.5,21.3-25.8c0-5.5-4.5-10-10-10     c-5,0-7.7,3-9.8,5.4l-1.5,1.7l-1.5-1.7C-149.6-213.3-152.3-216.3-157.3-216.3L-157.3-216.3z"
+                                            id="Fill-18" />
+                                    </g>
+                                </g>
+                            </svg>
                             <!-- Button End -->
                         </div>
                         <!-- Row Button End -->
@@ -812,18 +806,24 @@
                                     </div>
                                     <div class="flex gap-5 items-center">
                                         <div class="flex items-center h-fit">
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
-                                            </svg>
-                                            <p class="text-center border-b border-black text-[29px] w-20">1
-                                            </p>
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
-                                            </svg>
+                                            <p></p>
+                                            <div class="dec w-3 flex mb-5 items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current col-start-5 text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                                </svg>
+                                            </div>
+                                            <input class="w-20 text-center border-b border-black text-3xl -mt-5" id="2"
+                                                value="1">
+                                            <div
+                                                class="inc ml-auto w-3 mb-5 flex items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                                </svg>
+                                            </div>
                                         </div>
                                         <div class="flex items-center">
                                             <p class="font-semibold text-xs">Rp 25.200</p>
@@ -875,18 +875,24 @@
                                     </div>
                                     <div class="flex gap-5 items-center">
                                         <div class="flex items-center h-fit">
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
-                                            </svg>
-                                            <p class="text-center border-b border-black text-[29px] w-20">1
-                                            </p>
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
-                                            </svg>
+                                            <p></p>
+                                            <div class="dec w-3 mb-5 flex items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current col-start-5 text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                                </svg>
+                                            </div>
+                                            <input class="w-20 text-center border-b border-black text-3xl -mt-5" id="3"
+                                                value="1">
+                                            <div
+                                                class="inc ml-auto mb-5 w-3 flex items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                                </svg>
+                                            </div>
                                         </div>
                                         <div class="flex items-center">
                                             <p class="font-semibold text-xs">Rp 25.200</p>
@@ -938,18 +944,24 @@
                                     </div>
                                     <div class="flex gap-5 items-center">
                                         <div class="flex items-center h-fit">
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
-                                            </svg>
-                                            <p class="text-center border-b border-black text-[29px] w-20">1
-                                            </p>
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
-                                            </svg>
+                                            <p></p>
+                                            <div class="dec w-3 flex mb-5 items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current col-start-5 text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                                </svg>
+                                            </div>
+                                            <input class="w-20 text-center border-b border-black text-3xl -mt-5" id="4"
+                                                value="1">
+                                            <div
+                                                class="inc ml-auto w-3 mb-5 flex items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                                </svg>
+                                            </div>
                                         </div>
                                         <div class="flex items-center">
                                             <p class="font-semibold text-xs">Rp 25.200</p>
@@ -1005,18 +1017,24 @@
                                     </div>
                                     <div class="flex gap-5 items-center">
                                         <div class="flex items-center h-fit">
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
-                                            </svg>
-                                            <p class="text-center border-b border-black text-[29px] w-20">1
-                                            </p>
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
-                                            </svg>
+                                            <p></p>
+                                            <div class="dec w-3 flex mb-5 items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current col-start-5 text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                                </svg>
+                                            </div>
+                                            <input class="w-20 text-center border-b border-black text-3xl -mt-5" id="5"
+                                                value="1">
+                                            <div
+                                                class="inc ml-auto w-3 mb-5 flex items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                                </svg>
+                                            </div>
                                         </div>
                                         <div class="flex items-center">
                                             <p class="font-semibold text-xs">Rp 25.200</p>
@@ -1183,18 +1201,24 @@
                                     </div>
                                     <div class="flex gap-5 items-center">
                                         <div class="flex items-center h-fit">
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
-                                            </svg>
-                                            <p class="text-center border-b border-black text-[29px] w-20">1
-                                            </p>
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
-                                            </svg>
+                                            <p></p>
+                                            <div class="dec w-3 flex mb-5 items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current col-start-5 text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                                </svg>
+                                            </div>
+                                            <input class="w-20 text-center border-b border-black text-3xl -mt-5" id="5"
+                                                value="1">
+                                            <div
+                                                class="inc ml-auto w-3 mb-5 flex items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                                </svg>
+                                            </div>
                                         </div>
                                         <div class="flex items-center">
                                             <p class="font-semibold text-xs">Rp 25.200</p>
@@ -1295,18 +1319,24 @@
                                     </div>
                                     <div class="flex gap-5 items-center">
                                         <div class="flex items-center h-fit">
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
-                                            </svg>
-                                            <p class="text-center border-b border-black text-[29px] w-20">1
-                                            </p>
-                                            <svg class="h-3 fill-current text-secondary"
-                                                style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
-                                                <path
-                                                    d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
-                                            </svg>
+                                            <p></p>
+                                            <div class="dec w-3 flex mb-5 items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current col-start-5 text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H128v-32h256V272z" />
+                                                </svg>
+                                            </div>
+                                            <input class="w-20 text-center border-b border-black text-3xl -mt-5" id="6"
+                                                value="1">
+                                            <div
+                                                class="inc ml-auto w-3 mb-5 flex items-center justify-center cursor-pointer">
+                                                <svg class="h-5 w-5 -z-10 fill-current text-secondary"
+                                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M256,32C132.3,32,32,132.3,32,256s100.3,224,224,224s224-100.3,224-224S379.7,32,256,32z M384,272H272v112h-32V272H128v-32   h112V128h32v112h112V272z" />
+                                                </svg>
+                                            </div>
                                         </div>
                                         <div class="flex items-center">
                                             <p class="font-semibold text-xs">Rp 25.200</p>
