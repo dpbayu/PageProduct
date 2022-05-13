@@ -1,3 +1,10 @@
+document.addEventListener('alpine:init', () => {
+    Alpine.data('custom_select', () => ({
+        products: ['Pink','Red','Orange','Maroon'],
+        show: false,
+        value: null
+    }));
+})
 // Modal
 const btns = document.querySelectorAll("[data-target]");
 const close_modals = document.querySelectorAll(".close-modal");
