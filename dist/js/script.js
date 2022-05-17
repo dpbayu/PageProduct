@@ -1,6 +1,6 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('custom_select', () => ({
-        products: ['Pink','Red','Orange','Maroon'],
+        products: ['Pink', 'Red', 'Orange', 'Maroon'],
         show: false,
         value: null
     }));
@@ -53,6 +53,11 @@ for (var i = 0; i < incrementButton.length; i++) {
         var newValue = parseInt(inputValue) + 1;
         // console.log(newValue)
         input.value = newValue;
+        if (newValue <= 99) {
+            input.value = newValue;
+        } else {
+            input.value = 99;
+        }
     })
 }
 // DECREMENT
