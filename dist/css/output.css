@@ -1555,6 +1555,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 2.5rem;
 }
 
+<<<<<<< Updated upstream
 .before\:mx-5::before {
   content: var(--tw-content);
   margin-left: 1.25rem;
@@ -1587,6 +1588,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0.25rem;
 }
 
+=======
+>>>>>>> Stashed changes
 .before\:font-\[boxicons\]::before {
   content: var(--tw-content);
   font-family: boxicons;
@@ -1622,6 +1625,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.5rem;
 }
 
+<<<<<<< Updated upstream
 .before\:text-xs::before {
   content: var(--tw-content);
   font-size: 0.75rem;
@@ -1650,6 +1654,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.5rem;
 }
 
+=======
+>>>>>>> Stashed changes
 .before\:text-secondary::before {
   content: var(--tw-content);
   --tw-text-opacity: 1;
