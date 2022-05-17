@@ -1,6 +1,6 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('custom_select', () => ({
-        products: ['Pink','Red','Orange','Maroon'],
+        products: ['Pink', 'Red', 'Orange', 'Maroon'],
         show: false,
         value: null
     }));
@@ -75,3 +75,14 @@ for (var i = 0; i < decrementButton.length; i++) {
     })
 }
 // Produk
+
+// Star
+let star = document.querySelectorAll('input');
+let showValue = document.querySelector('#rating-value');
+
+for (let i = 0; i < star.length; i++) {
+    star[i].addEventListener('click', function () {
+        i = this.value;
+    });
+}
+// Star
