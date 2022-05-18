@@ -546,8 +546,72 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 0.5rem;
 }
 
+.-left-\[86px\] {
+  left: -86px;
+}
+
+.-left-\[80px\] {
+  left: -80px;
+}
+
+.-left-\[66px\] {
+  left: -66px;
+}
+
+.-left-\[60px\] {
+  left: -60px;
+}
+
+.-left-\[46px\] {
+  left: -46px;
+}
+
+.-left-\[40px\] {
+  left: -40px;
+}
+
+.-left-\[26px\] {
+  left: -26px;
+}
+
+.-left-\[20px\] {
+  left: -20px;
+}
+
 .-left-\[6px\] {
   left: -6px;
+}
+
+.-left-\[10px\] {
+  left: -10px;
+}
+
+.-left-\[15px\] {
+  left: -15px;
+}
+
+.-left-\[9px\] {
+  left: -9px;
+}
+
+.left-5 {
+  left: 1.25rem;
+}
+
+.-left-5 {
+  left: -1.25rem;
+}
+
+.-left-4 {
+  left: -1rem;
+}
+
+.-left-3 {
+  left: -0.75rem;
+}
+
+.-left-2 {
+  left: -0.5rem;
 }
 
 .z-10 {
@@ -709,22 +773,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 3rem;
 }
 
-.-ml-10 {
-  margin-left: -2.5rem;
-}
-
-.-ml-5 {
-  margin-left: -1.25rem;
-}
-
-.-ml-1 {
-  margin-left: -0.25rem;
-}
-
-.-ml-2 {
-  margin-left: -0.5rem;
-}
-
 .block {
   display: block;
 }
@@ -849,14 +897,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-\[300px\] {
   height: 300px;
-}
-
-.h-28 {
-  height: 7rem;
-}
-
-.h-36 {
-  height: 9rem;
 }
 
 .w-full {
@@ -995,18 +1035,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 348px;
 }
 
-.w-2 {
-  width: 0.5rem;
-}
-
-.w-24 {
-  width: 6rem;
-}
-
-.w-36 {
-  width: 9rem;
-}
-
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1023,10 +1051,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-
-.flex-row {
-  flex-direction: row;
 }
 
 .flex-row-reverse {
@@ -1445,16 +1469,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 600;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .font-thin {
   font-weight: 100;
 }
 
 .font-light {
   font-weight: 300;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .text-white {
@@ -1472,6 +1496,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
+.text-first {
+  --tw-text-opacity: 1;
+  color: rgb(255 108 12 / var(--tw-text-opacity));
+}
+
 .text-forth {
   --tw-text-opacity: 1;
   color: rgb(226 232 240 / var(--tw-text-opacity));
@@ -1480,11 +1509,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-first {
-  --tw-text-opacity: 1;
-  color: rgb(255 108 12 / var(--tw-text-opacity));
 }
 
 .text-slate-600 {
@@ -1542,159 +1566,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: absolute;
 }
 
-.before\:left-2::before {
-  content: var(--tw-content);
-  left: 0.5rem;
-}
-
 .before\:left-1::before {
   content: var(--tw-content);
   left: 0.25rem;
 }
 
-.before\:left-11::before {
+.before\:left-2::before {
   content: var(--tw-content);
-  left: 2.75rem;
-}
-
-.before\:left-0::before {
-  content: var(--tw-content);
-  left: 0px;
-}
-
-.before\:left-3::before {
-  content: var(--tw-content);
-  left: 0.75rem;
-}
-
-.before\:left-2\/3::before {
-  content: var(--tw-content);
-  left: 66.666667%;
-}
-
-.before\:-left-3::before {
-  content: var(--tw-content);
-  left: -0.75rem;
-}
-
-.before\:left-10::before {
-  content: var(--tw-content);
-  left: 2.5rem;
-}
-
-.before\:-left-0::before {
-  content: var(--tw-content);
-  left: -0px;
-}
-
-.before\:-left-2::before {
-  content: var(--tw-content);
-  left: -0.5rem;
-}
-
-.before\:-left-1::before {
-  content: var(--tw-content);
-  left: -0.25rem;
-}
-
-.before\:-left-10::before {
-  content: var(--tw-content);
-  left: -2.5rem;
-}
-
-.before\:-left-5::before {
-  content: var(--tw-content);
-  left: -1.25rem;
-}
-
-.before\:-left-20::before {
-  content: var(--tw-content);
-  left: -5rem;
-}
-
-.before\:left-20::before {
-  content: var(--tw-content);
-  left: 5rem;
-}
-
-.before\:left-6::before {
-  content: var(--tw-content);
-  left: 1.5rem;
-}
-
-.before\:-left-32::before {
-  content: var(--tw-content);
-  left: -8rem;
-}
-
-.before\:left-5::before {
-  content: var(--tw-content);
-  left: 1.25rem;
-}
-
-.before\:left-4::before {
-  content: var(--tw-content);
-  left: 1rem;
-}
-
-.before\:left-\[18px\]::before {
-  content: var(--tw-content);
-  left: 18px;
-}
-
-.before\:left-\[17px\]::before {
-  content: var(--tw-content);
-  left: 17px;
-}
-
-.before\:left-\[5px\]::before {
-  content: var(--tw-content);
-  left: 5px;
-}
-
-.before\:left-\[15px\]::before {
-  content: var(--tw-content);
-  left: 15px;
-}
-
-.before\:left-\[14px\]::before {
-  content: var(--tw-content);
-  left: 14px;
-}
-
-.before\:left-\[13px\]::before {
-  content: var(--tw-content);
-  left: 13px;
-}
-
-.before\:left-\[16px\]::before {
-  content: var(--tw-content);
-  left: 16px;
-}
-
-.before\:left-\[19px\]::before {
-  content: var(--tw-content);
-  left: 19px;
-}
-
-.before\:-left-4::before {
-  content: var(--tw-content);
-  left: -1rem;
-}
-
-.before\:-left-\[1px\]::before {
-  content: var(--tw-content);
-  left: -1px;
-}
-
-.before\:left-\[10px\]::before {
-  content: var(--tw-content);
-  left: 10px;
-}
-
-.before\:-left-\[2px\]::before {
-  content: var(--tw-content);
-  left: -2px;
+  left: 0.5rem;
 }
 
 .before\:-left-\[3px\]::before {
@@ -1702,34 +1581,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: -3px;
 }
 
-.before\:left-\[0\]::before {
+.before\:left-\[10px\]::before {
   content: var(--tw-content);
-  left: 0;
+  left: 10px;
 }
 
-.before\:left-\[3px\]::before {
+.before\:left-0::before {
   content: var(--tw-content);
-  left: 3px;
+  left: 0px;
 }
 
-.before\:ml-1::before {
+.before\:-left-\[10px\]::before {
   content: var(--tw-content);
-  margin-left: 0.25rem;
-}
-
-.before\:-ml-5::before {
-  content: var(--tw-content);
-  margin-left: -1.25rem;
-}
-
-.before\:ml-5::before {
-  content: var(--tw-content);
-  margin-left: 1.25rem;
-}
-
-.before\:h-20::before {
-  content: var(--tw-content);
-  height: 5rem;
+  left: -10px;
 }
 
 .before\:font-\[\'boxicons\'\]::before {
@@ -1741,36 +1605,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   content: var(--tw-content);
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.before\:text-5xl::before {
-  content: var(--tw-content);
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.before\:text-3xl::before {
-  content: var(--tw-content);
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.before\:text-xs::before {
-  content: var(--tw-content);
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.before\:text-sm::before {
-  content: var(--tw-content);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.before\:text-lg::before {
-  content: var(--tw-content);
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .before\:text-gray-300::before {
