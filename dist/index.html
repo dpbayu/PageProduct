@@ -9,6 +9,7 @@
     <title>Product Page</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <style>
         input:nth-child(2n + 1)::before {
             right: 7px;
@@ -49,6 +50,10 @@
 
         .rotate {
             transform: rotate(180deg);
+        }
+
+        input[type="checkbox"]:checked:after {
+            display: block;
         }
     </style>
 </head>
@@ -805,13 +810,12 @@
                                     </div>
                                 </div>
                                 <div class="flex">
+                                    <div class="before:content-['\eeb8'] before:absolute before:font-['boxicons'] before:text-2xl before:-left-[3px] before:text-gray-300 before:transition-all relative left-[7px] w-5 h-10 flex justify-center items-center overflow-hidden appearance-none"
+                                        type="radio"></div>
+                                    <div class="before:content-['\eeb8'] before:absolute before:font-['boxicons'] before:text-2xl before:left-[10px] before:text-secondary before:transition-all relative -left-[25px] w-5 h-10 flex justify-center items-center overflow-hidden text-secondary appearance-none"
+                                        type="radio"></div>
                                     <div
-                                        class="before:content-['\eeb8'] before:absolute before:font-['boxicons'] before:text-2xl before:-left-[3px] before:text-gray-300 before:transition-all relative left-[7px] w-5 h-10 flex justify-center items-center overflow-hidden cursor-pointer appearance-none"
-                                        type="radio" name="produk1"></div>
-                                    <div
-                                        class="before:content-['\eeb8'] before:absolute before:font-['boxicons'] before:text-2xl before:left-[10px] before:text-secondary before:transition-all relative -left-[25px] w-5 h-10 flex justify-center items-center overflow-hidden text-secondary cursor-pointer appearance-none"
-                                        type="radio" name="produk1"></div>
-                                    <div class="relative self-center border h-2 bg-forth rounded-full w-[170px] -left-[10px]">
+                                        class="relative self-center border h-2 bg-forth rounded-full w-[170px] -left-[10px]">
                                         <div
                                             class="absolute top-0 left-0 self-center border h-2 bg-secondary rounded-full w-[0]">
                                         </div>
@@ -861,7 +865,8 @@
                         </div>
                         <!-- 1 Product Start -->
                         <div class="flex items-center gap-5 mb-5">
-                            <input type="checkbox" class="h-9 w-9 rounded-lg checked:bg-blue-500" />
+                            <input type="checkbox"
+                                class="after:content-['\f00c'] after:font-['Font_Awesome_5_Free'] after:font-bold after:text-lg after:text-white after:hidden appearance-none h-8 w-8 bg-white rounded-lg border-gray-600 border cursor-pointer flex items-center justify-center checked:bg-secondary checked:border-secondary">
                             <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
                                 <img class="h-full w-20" src="https://source.unsplash.com/1000x600?water">
                                 <div class="flex-col">
@@ -930,8 +935,8 @@
                         <!-- 1 Product End -->
                         <!-- 2 Product Start -->
                         <div class="flex items-center gap-5 mb-5">
-                            <input type="checkbox" class="h-8 w-8 rounded-lg checked:bg-blue-500" />
-                            <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
+                            <input type="checkbox"
+                                class="after:content-['\f00c'] after:font-['Font_Awesome_5_Free'] after:font-bold after:text-lg after:text-white after:hidden appearance-none h-8 w-8 bg-white rounded-lg border-gray-600 border cursor-pointer flex items-center justify-center checked:bg-secondary checked:border-secondary">                            <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
                                 <img class="h-full w-20" src="https://source.unsplash.com/1000x600?card">
                                 <div class="flex-col">
                                     <p class="font-semibold text-sm">MUKKA</p>
@@ -999,8 +1004,8 @@
                         <!-- 2 Product End -->
                         <!-- 3 Product Start -->
                         <div class="flex items-center gap-5 mb-5">
-                            <input type="checkbox" class="h-8 w-8 rounded-lg checked:bg-blue-500" />
-                            <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
+                            <input type="checkbox"
+                                class="after:content-['\f00c'] after:font-['Font_Awesome_5_Free'] after:font-bold after:text-lg after:text-white after:hidden appearance-none h-8 w-8 bg-white rounded-lg border-gray-600 border cursor-pointer flex items-center justify-center checked:bg-secondary checked:border-secondary">                            <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
                                 <img class="h-full w-20" src="https://source.unsplash.com/1000x600?tea">
                                 <div class="flex-col">
                                     <p class="font-semibold text-sm">MUKKA</p>
@@ -1072,8 +1077,8 @@
                         </div>
                         <!-- 4 Product Start -->
                         <div class="flex items-center gap-5 mb-5">
-                            <input type="checkbox" class="h-8 w-8 rounded-lg checked:bg-blue-500" />
-                            <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
+                            <input type="checkbox"
+                                class="after:content-['\f00c'] after:font-['Font_Awesome_5_Free'] after:font-bold after:text-lg after:text-white after:hidden appearance-none h-8 w-8 bg-white rounded-lg border-gray-600 border cursor-pointer flex items-center justify-center checked:bg-secondary checked:border-secondary">                            <div class="w-full h-[140px] justify-between p-5 flex gap-5 border rounded-sm">
                                 <img class="h-full w-20" src="https://source.unsplash.com/1000x600?milk">
                                 <div class="flex-col">
                                     <p class="font-semibold text-sm">BEAUTY WORLD</p>
@@ -1256,8 +1261,8 @@
                         </div>
                         <!-- 1 Product Start -->
                         <div class="flex items-center gap-5 mb-5">
-                            <input type="checkbox" class="h-8 w-8 rounded-lg checked:bg-blue-500">
-                            <div class="w-full h-[140px] justify-between p-5 border flex gap-5 rounded-sm">
+                            <input type="checkbox"
+                                class="after:content-['\f00c'] after:font-['Font_Awesome_5_Free'] after:font-bold after:text-lg after:text-white after:hidden appearance-none h-8 w-8 bg-white rounded-lg border-gray-600 border cursor-pointer flex items-center justify-center checked:bg-secondary checked:border-secondary">                            <div class="w-full h-[140px] justify-between p-5 border flex gap-5 rounded-sm">
                                 <img class="h-full w-20" src="https://source.unsplash.com/1000x600?water">
                                 <div class="flex-col">
                                     <p class="font-semibold text-sm">MUKKA</p>
@@ -1374,8 +1379,8 @@
                         </div>
                         <!-- 2 Product Start -->
                         <div class="flex items-center gap-5 mb-5">
-                            <input type="checkbox" class="h-8 w-8 rounded-lg checked:bg-blue-500">
-                            <div class="w-full h-[140px] justify-between p-5 border flex gap-5 rounded-sm">
+                            <input type="checkbox"
+                                class="after:content-['\f00c'] after:font-['Font_Awesome_5_Free'] after:font-bold after:text-lg after:text-white after:hidden appearance-none h-8 w-8 bg-white rounded-lg border-gray-600 border cursor-pointer flex items-center justify-center checked:bg-secondary checked:border-secondary">                            <div class="w-full h-[140px] justify-between p-5 border flex gap-5 rounded-sm">
                                 <img class="h-full w-20" src="https://source.unsplash.com/1000x600?nuke">
                                 <div class="flex-col">
                                     <p class="font-semibold text-sm">MUKKA</p>
