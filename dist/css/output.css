@@ -706,6 +706,34 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 103px;
 }
 
+.-left-10 {
+  left: -2.5rem;
+}
+
+.-left-5 {
+  left: -1.25rem;
+}
+
+.left-\[12px\] {
+  left: 12px;
+}
+
+.-left-\[27px\] {
+  left: -27px;
+}
+
+.-left-\[25px\] {
+  left: -25px;
+}
+
+.left-\[7px\] {
+  left: 7px;
+}
+
+.-left-\[12px\] {
+  left: -12px;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1129,6 +1157,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[348px\] {
   width: 348px;
+}
+
+.w-\[160px\] {
+  width: 160px;
+}
+
+.w-\[145px\] {
+  width: 145px;
+}
+
+.w-\[135px\] {
+  width: 135px;
+}
+
+.w-\[80px\] {
+  width: 80px;
+}
+
+.w-\[0\] {
+  width: 0;
 }
 
 .transform {
@@ -1709,6 +1757,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   content: var(--tw-content);
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
+.before\:text-secondary::before {
+  content: var(--tw-content);
+  --tw-text-opacity: 1;
+  color: rgb(254 128 107 / var(--tw-text-opacity));
 }
 
 .before\:transition-all::before {
