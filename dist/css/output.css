@@ -895,10 +895,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 27px;
 }
 
-.h-\[80px\] {
-  height: 80px;
-}
-
 .h-\[140px\] {
   height: 140px;
 }
@@ -921,10 +917,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-\[300px\] {
   height: 300px;
-}
-
-.h-9 {
-  height: 2.25rem;
 }
 
 .w-full {
@@ -1043,16 +1035,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 255px;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
 .w-20 {
   width: 5rem;
 }
 
 .w-\[22px\] {
   width: 22px;
-}
-
-.w-8 {
-  width: 2rem;
 }
 
 .w-\[325px\] {
@@ -1169,10 +1161,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.125rem;
 }
 
-.rounded-3xl {
-  border-radius: 1.5rem;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1194,10 +1182,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .border {
   border-width: 1px;
-}
-
-.border-2 {
-  border-width: 2px;
 }
 
 .border-b-2 {
@@ -1248,19 +1232,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(148 163 184 / var(--tw-border-opacity));
 }
 
-.border-slate-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(203 213 225 / var(--tw-border-opacity));
-}
-
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
-}
-
 .border-gray-600 {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
+}
+
+.border-slate-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(203 213 225 / var(--tw-border-opacity));
 }
 
 .border-y-forth {
@@ -1689,24 +1668,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: 'Font Awesome 5 Free';
 }
 
-.after\:text-5xl::after {
-  content: var(--tw-content);
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.after\:text-xl::after {
-  content: var(--tw-content);
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.after\:text-base::after {
-  content: var(--tw-content);
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
 .after\:text-lg::after {
   content: var(--tw-content);
   font-size: 1.125rem;
@@ -1716,18 +1677,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .after\:font-bold::after {
   content: var(--tw-content);
   font-weight: 700;
-}
-
-.after\:text-amber-400::after {
-  content: var(--tw-content);
-  --tw-text-opacity: 1;
-  color: rgb(251 191 36 / var(--tw-text-opacity));
-}
-
-.after\:text-secondary::after {
-  content: var(--tw-content);
-  --tw-text-opacity: 1;
-  color: rgb(254 128 107 / var(--tw-text-opacity));
 }
 
 .after\:text-white::after {
@@ -1744,16 +1693,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .checked\:border-secondary:checked {
   --tw-border-opacity: 1;
   border-color: rgb(254 128 107 / var(--tw-border-opacity));
-}
-
-.checked\:bg-cyan-500:checked {
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 182 212 / var(--tw-bg-opacity));
-}
-
-.checked\:bg-blue-500:checked {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .checked\:bg-secondary:checked {
